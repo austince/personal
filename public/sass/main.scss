@@ -1,0 +1,36 @@
+// Grayscale theme
+@import 'grayscale';
+@import 'variables';
+@import 'mixins';
+
+%title {
+  color: $white;
+  font-family: $title-text-font;
+}
+
+
+html,
+body {
+  background-color: $background;
+  text-transform: lowercase;
+  width: 100%;
+
+  nav {
+    @extend %title;
+  }
+}
+
+/*
+header {
+  margin-top: 40px;
+
+  h1 {
+    @extend %title;
+    letter-spacing: .2em;
+  }
+
+  ul {
+    color: $white;
+    font-family: $title-text-font;
+  }
+}*/

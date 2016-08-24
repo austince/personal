@@ -1,0 +1,26 @@
+{
+  "name": "personal-site",
+  "authors": [
+    "austin <austin.cawley@gmail.com>"
+  ],
+  "description": "",
+  "main": "public/index.html",
+  "keywords": [
+    "personal"
+  ],
+  "license": "MIT",
+  "homepage": "austince.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}
