@@ -1,7 +1,3 @@
-// Variables
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Abel|Lato:300');
-
 // Coolors Exported Palette - coolors.co/1e3231-486664-7c9392-a5d1ce-bef4f2
 // Palette
 $jungle-green: rgba(30, 50, 49, 1);
@@ -10,6 +6,7 @@ $roman-silver: rgba(124, 147, 146, 1);
 $pastel-blue: rgba(165, 209, 206, 1);
 $diamond: rgba(190, 244, 242, 1);
 $white: #fff;
+$black: #000;
 
 $primary: $roman-silver;
 $secondary: $jungle-green;
@@ -18,3 +15,9 @@ $background: $jungle-green;
 
 $title-text-font: 'Abel', serif;
 $body-text-font: 'Lato', sans-serif;
+
+$title-font-size: 36pt;
+$title-intro-font-size: 18px;
+$heading-font-size: 18px;
+$nav-font-size: 16px;
+$body-font-size: 18px;

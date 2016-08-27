@@ -22,6 +22,8 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "font-awesome": "^4.6.3",
-    "webcomponentsjs": "^0.7.22"
+    "webcomponentsjs": "^0.7.22",
+    "polymer": "^1.6.1",
+    "iron-ajax": "PolymerElements/iron-ajax#^1.4.3"
   }
 }

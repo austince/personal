@@ -1,0 +1,83 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-request.html">
+
+<dom-module id="light-switch">
+
+    <template>
+
+        <style>
+            :host {
+                display: inline-block;
+            }
+
+        </style>
+
+        <!-- local DOM goes here -->
+        <p>The lights on [[isOn]]</p>
+        <iron-ajax
+            auto
+            method="POST"
+            url="http://baja.cawleyedwards.com/light"
+            params='{{options}}'
+            handle-as="json"
+            on-response="handleResponse"
+            debounce-duration="300">
+        </iron-ajax>
+        <iron-request id="xhr"></iron-request>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'light-switch',
+            properties: {
+                isOn: {
+                    type: Boolean,
+                    notify: true,
+                    reflectToAttribute: true,
+                    value: false
+                },
+                room: {
+                    type: String,
+                    notify: true,
+                    reflectToAttribute: true,
+                    value: 'austin' // default to me, eh
+                },
+                options: {
+                    computed: 'computeOptions(room, isOn)'
+                }
+            },
+            listeners: {
+                "tap": "toggle"
+            },
+            ready: function() {
+                var lightSwitch = this;
+                this.$.xhr.send({
+                    url: 'http://baja.cawleyedwards.com/light'
+                }).then(function(resp) {
+                    console.log(resp);
+                    lightSwitch.isOn = ('true' === resp[lightSwitch.room]);
+                }).catch(function(error) {
+                    console.log(error);
+                    lightSwitch.isOn = false;
+                });
+            },
+            toggle: function() {
+                this.isOn = !this.isOn;
+                ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'Room',
+                    eventAction: 'toggle',
+                    eventLabel: this.room + "'s room"
+                });
+            },
+            computeOptions: function(room, isOn) {
+                return { value: '' + isOn, room: room }
+            },
+            handleResponse: function() {
+                console.log(arguments);
+            }
+        });
+    </script>
+
+</dom-module>

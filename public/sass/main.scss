@@ -1,36 +1,131 @@
 // Grayscale theme
-@import 'grayscale';
+@import 'fonts';
 @import 'variables';
 @import 'mixins';
+@import 'grayscale';
 
-%title {
-  color: $white;
-  font-family: $title-text-font;
+%main-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-
+// Overarching pieces
 html,
 body {
+  margin: 0;
+  padding: 0;
   background-color: $background;
   text-transform: lowercase;
   width: 100%;
 
   nav {
-    @extend %title;
-  }
-}
-
-/*
-header {
-  margin-top: 40px;
-
-  h1 {
-    @extend %title;
-    letter-spacing: .2em;
-  }
-
-  ul {
     color: $white;
     font-family: $title-text-font;
   }
-}*/
+
+  footer {
+    background-color: $jungle-green;
+    padding: 20px;
+
+    p {
+      font-size: $nav-font-size;
+    }
+  }
+}
+
+.section-title {
+  width: 100%;
+  position: absolute;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+.highlight {
+  background-color: transparentize($primary, .5);
+  margin-bottom: 8px;
+  padding: 4px 32px 4px 8px;
+}
+
+.panel-video {
+  display: table;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  video {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    :hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.intro {
+  background-color: $black;
+
+  #intro-button {
+    z-index: 1;
+  }
+}
+
+#about {
+  @extend %main-section;
+  background-color: $white;
+  width: 100%;
+  padding-bottom: 20px;
+
+  .social-links {
+    margin-top: 40px;
+  }
+
+  .about-content {
+    padding-top: 80px;
+  }
+
+  light-switch {
+    color: black;
+  }
+}
+
+.projects {
+  @extend %main-section;
+  background-color: $deep-space;
+  overflow-x: hidden;
+
+  .container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .project-row {
+    height: auto;
+  }
+
+  .rectangle {
+    float: left;
+    -webkit-background-size: cover;
+    background-size: cover;
+    min-height: 420px;
+  }
+  .description {
+    *:first-child {
+      padding-top: 8px
+    }
+    * {
+      padding-left: 8px
+    }
+  }
+  .project {
+    a {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}

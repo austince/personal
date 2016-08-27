@@ -1,14 +1,16 @@
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var header = require('gulp-header');
-var cleanCSS = require('gulp-clean-css');
-var rename = require("gulp-rename");
-var uglify = require('gulp-uglify');
-var pkg = require('./package.json');
+const gulp = require('gulp');
+const clean = require('gulp-clean');
+const sass = require('gulp-sass');
+const browserSync = require('browser-sync').create();
+const header = require('gulp-header');
+const cleanCSS = require('gulp-clean-css');
+const rename = require("gulp-rename");
+const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
+const pkg = require('./package.json');
 
 // Set the banner content
-var banner = ['/*!\n',
+const banner = ['/*!\n',
     ' * <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
     ' * Copyright 2016-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
     ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
@@ -19,23 +21,25 @@ var banner = ['/*!\n',
 // Compile Sass files
 gulp.task('sass', function() {
     return gulp.src('public/sass/main.scss')
-        .pipe(sass())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('public/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+      .pipe(sass())
+      .pipe(header(banner, { pkg: pkg }))
+      .pipe(gulp.dest('public/css'))
+      .pipe(browserSync.reload({
+          stream: true
+      }))
 });
 
 // Minify compiled CSS
 gulp.task('minify-css', ['sass'], function() {
     return gulp.src('public/css/main.css')
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('public/css'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+      .pipe(sourcemaps.init())
+      .pipe(cleanCSS({ compatibility: 'ie8' }))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('public/css'))
+      .pipe(browserSync.reload({
+          stream: true
+      }))
 });
 
 // Minify JS
@@ -44,43 +48,38 @@ gulp.task('minify-js', function() {
           'public/js/*.js',
           '!public/js/*.min.js'
         ])
-        .pipe(uglify())
-        .pipe(header(banner, { pkg: pkg }))
-        .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('public/js'))
-        .pipe(browserSync.reload({
-            stream: true
-        }))
+      .pipe(sourcemaps.init())
+      .pipe(uglify())
+      .pipe(header(banner, { pkg: pkg }))
+      .pipe(rename({ suffix: '.min' }))
+      .pipe(sourcemaps.write())
+      .pipe(gulp.dest('public/js'))
+      .pipe(browserSync.reload({
+          stream: true
+      }))
 });
 
-// Copy vendor libraries from /node_modules into /vendor
-gulp.task('copy', function() {
-    gulp.src(['public/bower_components/bootstrap/dist/**/*', '!**/npm.js', '!**/bootstrap-theme.*', '!**/*.map'])
-        .pipe(gulp.dest('public/vendor/bootstrap'));
-
-    gulp.src(['public/bower_components/jquery/dist/jquery.js', 'node_modules/jquery/dist/jquery.min.js'])
-        .pipe(gulp.dest('public/vendor/jquery'));
-
-    gulp.src([
-            'public/bower_components/font-awesome/**',
-            '!public/bower_components/font-awesome/**/*.map',
-            '!public/bower_components/font-awesome/.npmignore',
-            '!public/bower_components/font-awesome/*.txt',
-            '!public/bower_components/font-awesome/*.md',
-            '!public/bower_components/font-awesome/*.json'
-        ])
-        .pipe(gulp.dest('public/vendor/font-awesome'))
+gulp.task('clean', function() {
+  return gulp.src([
+    'public/css',
+    'public/js/*.min.js'
+  ], { read: false })
+    .pipe(clean())
 });
 
 // Run everything
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
     browserSync.init({
         server: {
             baseDir: 'public'
-        }
+        },
+        ui: {
+          port: 8081
+        },
+        port: 8080
     })
 });
 
