@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test: light-switch</title>
+    <script src="../public/bower_components/webcomponentsjs/webcomponents.js"></script>
+    <script src="../node_modules/web-component-tester/browser.js"></script>
+    <link rel="import" href="../public/polymer/light-switch.html">
+</head>
+<body>
+    <light-switch id="austinLight" room="austin"></light-switch>
+    <light-switch id="julianLight" room="julian"></light-switch>
+    <script>
+        var jsonResponseHeaders = {
+            'Content-Type': 'application/json'
+        };
+        var server;
+        setup(function() {
+            server = sinon.fakeServer.create();
+            server.respondWith(
+                    'GET',
+                    '/light',
+                    [
+                            200,
+                            jsonResponseHeaders,
+                            '{"austin":"false", "julian":"true"}'
+                    ]
+            )
+        });
+        teardown(function () {
+            server.restore();
+        });
+
+        suite('test <light-switch>', function() {
+            test('loads initial values', function() {
+                assert.isTrue(true);
+                assert.isFalse(false);
+            })
+        })
+    </script>
+</body>
+</html>

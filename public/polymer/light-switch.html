@@ -1,4 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
 <link rel="import" href="../bower_components/iron-ajax/iron-request.html">
 
@@ -9,33 +11,80 @@
         <style>
             :host {
                 display: inline-block;
+                cursor: pointer;
+            }
+            paper-icon-button {
+                fill: black;
+                height: 64px;
+                width: 64px;
+                --paper-icon-button-ink-color: var(--paper-yellow-300);
+                border-radius: 50%;
+                padding: 2px;
+            }
+
+            :host([is-on]) paper-icon-button {
+                background-color: var(--paper-yellow-200);
             }
 
         </style>
 
         <!-- local DOM goes here -->
-        <p>The lights on [[isOn]]</p>
+        <!--<p>The lights are on in [[room]]'s room? [[isOn]]</p>-->
+
+        <paper-icon-button icon="lightbulb-outline"
+                           title="[[_label]]"
+                           disabled="{{!hasInitialized}}"
+                           on-tap="toggle">
+
+        </paper-icon-button>
+
+        <template is="dom-if" if="{{_showLabel}}">
+            <p>[[_label]]</p>
+        </template>
+
         <iron-ajax
-            auto
-            method="POST"
-            url="http://baja.cawleyedwards.com/light"
-            params='{{options}}'
-            handle-as="json"
-            on-response="handleResponse"
-            debounce-duration="300">
+                id="toggleRequest"
+                method="POST"
+                url="https://baja.cawleyedwards.com/light"
+                params='{{options}}'
+                handle-as="json"
+                on-error="handleError"
+                on-response="handleResponse"
+                debounce-duration="300">
         </iron-ajax>
-        <iron-request id="xhr"></iron-request>
+
+        <iron-request id="initRequest"></iron-request>
     </template>
 
     <script>
         Polymer({
             is: 'light-switch',
             properties: {
+                hasInitialized: {
+                    type: Boolean,
+                    notify: true,
+                    value: false
+                },
                 isOn: {
                     type: Boolean,
                     notify: true,
                     reflectToAttribute: true,
                     value: false
+                },
+                showLabel: {
+                    type: Boolean,
+                    notify: true,
+                    value: false
+                },
+                _showLabel: {
+                    computed: 'computeShowLabel(label,showLabel)'
+                },
+                label: {
+                    type: String,
+                    value: null
+                },
+                _label: {
+                    computed: 'computeLabel(label, room)'
                 },
                 room: {
                     type: String,
@@ -47,35 +96,60 @@
                     computed: 'computeOptions(room, isOn)'
                 }
             },
-            listeners: {
-                "tap": "toggle"
-            },
             ready: function() {
                 var lightSwitch = this;
-                this.$.xhr.send({
-                    url: 'http://baja.cawleyedwards.com/light'
+                this.$.initRequest.send({
+                    method: 'GET',
+                    handleAs: 'json',
+                    url: 'https://baja.cawleyedwards.com/light'
                 }).then(function(resp) {
-                    console.log(resp);
-                    lightSwitch.isOn = ('true' === resp[lightSwitch.room]);
+                    var data = resp.parseResponse();
+                    lightSwitch.isOn = ('true' === data[lightSwitch.room]);
+                    lightSwitch.hasInitialized = true;
+                    console.info(lightSwitch.room + '\'s lights are all set up!');
                 }).catch(function(error) {
-                    console.log(error);
+                    console.error(error);
                     lightSwitch.isOn = false;
                 });
+
+                this.ga = window.ga || function() {};
             },
             toggle: function() {
+                if (!this.hasInitialized) {
+                    console.warn('Still setting things up!');
+                    return;
+                }
                 this.isOn = !this.isOn;
-                ga('send', {
+                this.$.toggleRequest.generateRequest();
+
+                this.ga('send', {
                     hitType: 'event',
                     eventCategory: 'Room',
                     eventAction: 'toggle',
                     eventLabel: this.room + "'s room"
                 });
             },
+            computeShowLabel: function(label, showLabel) {
+                return (label != null) || showLabel;
+            },
+            computeLabel: function(label, room) {
+                return label || room + "'s room";
+            },
             computeOptions: function(room, isOn) {
                 return { value: '' + isOn, room: room }
             },
-            handleResponse: function() {
-                console.log(arguments);
+            handleError: function(error) {
+                console.error('Something went wrong?');
+                console.error(error);
+                this.ga('send', {
+                    hitType: 'event',
+                    eventCategory: 'Room',
+                    eventAction: 'toggleError',
+                    eventLabel: this.room + "'s room"
+                });
+            },
+            handleResponse: function(resp) {
+                console.log('Successfully toggled the lights. Joy.');
             }
         });
     </script>

@@ -75,9 +75,9 @@
     <header class="intro panel-video">
         <!-- Background video from Venture Hacks -->
         <video autoplay preload loop muted>
-            <source src="assets/venturehacks2016.mp4" type="video/mp4"/>
-            <source src="assets/venturehacks2016.ogg" type="video/ogg"/>
-            <source src="assets/venturehacks2016.webm" type="video/webm"/>
+            <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.mp4" type="video/mp4"/>
+            <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.ogg" type="video/ogg"/>
+            <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.webm" type="video/webm"/>
         </video>
 
         <div class="intro-body">
@@ -104,16 +104,19 @@
     <!-- About Section -->
     <section id="about" class="container content-section text-center">
         <h2 class="section-title"><span class="highlight">me</span></h2>
-        <div class="row about-content">
-            <div class="col-lg-8 col-lg-offset-2">
-                <!-- School -->
-                <!-- Goals -->
-                <!-- Lights -->
-                <p>If you've come to flicker my lights, scroll no further.</p>
-                <light-switch room="austin"></light-switch>
-                <br>
-                <light-switch room="julian"></light-switch>
+
+        <p>If you've come to flicker my house lights, scroll no further.</p>
+        <div class="row about-lights">
+            <div class="col-md-4 col-xs-12">
+                <light-switch room="austin" label="My room"></light-switch>
             </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4 col-xs-12">
+                <light-switch room="julian" label="My roomate's room"></light-switch>
+            </div>
+        </div>
+        <div class="row about-content">
+
         </div>
         <div class="row social-links">
             <div class="col-lg-8 col-lg-offset-2">

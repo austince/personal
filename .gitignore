@@ -26,7 +26,5 @@ fabric.properties
 
 node_modules/
 public/bower_components/
-*.min*
+*.min.*
 /public/css/
-/public/vendor/
-/public/.sass-cache/

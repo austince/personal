@@ -7,6 +7,10 @@
   "license": {
     "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/wct",
+    "deploy": "firebase deploy"
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "gulp": "^3.9.1",
@@ -17,7 +21,8 @@
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.4",
-    "gulp-vulcanize": "^6.1.0"
+    "gulp-vulcanize": "^6.1.0",
+    "web-component-tester": "^4.3.4"
   },
   "repository": {
     "type": "git",
