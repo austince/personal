@@ -6,6 +6,7 @@
 
 $(function() {
   var introButtonClicked = false;
+  var video = $('video');
 
   $('#intro-button').click(function() {
     introButtonClicked = true;
@@ -15,7 +16,12 @@ $(function() {
       introButtonClicked = false;
       return;
     }
-    var video = $('video');
     video.prop('muted', !video.prop('muted'));
   });
+
+  // Hide the video on all mobile devices but allow small screen computers to play it
+  // Just don't want to deal with autoplay on mobile
+  if(isMobile.any) {
+    video.remove();
+  }
 });

@@ -12,7 +12,17 @@
             :host {
                 display: inline-block;
                 cursor: pointer;
+                max-width: 80%;
             }
+
+            :host([is-on]) paper-icon-button {
+                background-color: var(--paper-yellow-200);
+            }
+
+            :host .error {
+                color: red;
+            }
+
             paper-icon-button {
                 fill: black;
                 height: 64px;
@@ -21,18 +31,13 @@
                 border-radius: 50%;
                 padding: 2px;
             }
-
-            :host([is-on]) paper-icon-button {
-                background-color: var(--paper-yellow-200);
-            }
-
         </style>
 
         <!-- local DOM goes here -->
         <!--<p>The lights are on in [[room]]'s room? [[isOn]]</p>-->
 
         <paper-icon-button icon="lightbulb-outline"
-                           title="[[_label]]"
+                           title="[[_label]] light switch"
                            disabled="{{!hasInitialized}}"
                            on-tap="toggle">
 
@@ -42,11 +47,15 @@
             <p>[[_label]]</p>
         </template>
 
+        <template is="dom-repeat" items="{{errors}}">
+            <p class="error">{{item}}</p>
+        </template>
+
         <iron-ajax
                 id="toggleRequest"
                 method="POST"
                 url="https://baja.cawleyedwards.com/light"
-                params='{{options}}'
+                params='{{reqOptions}}'
                 handle-as="json"
                 on-error="handleError"
                 on-response="handleResponse"
@@ -71,6 +80,11 @@
                     reflectToAttribute: true,
                     value: false
                 },
+                errors: {
+                    type: Array,
+                    notify: true,
+                    value: []
+                },
                 showLabel: {
                     type: Boolean,
                     notify: true,
@@ -92,7 +106,7 @@
                     reflectToAttribute: true,
                     value: 'austin' // default to me, eh
                 },
-                options: {
+                reqOptions: {
                     computed: 'computeOptions(room, isOn)'
                 }
             },
@@ -109,7 +123,13 @@
                     console.info(lightSwitch.room + '\'s lights are all set up!');
                 }).catch(function(error) {
                     console.error(error);
-                    lightSwitch.isOn = false;
+                    this.errors.push("Light switches are unavailable. We can't have nice things.");
+                    this.ga('send', {
+                        hitType: 'event',
+                        eventCategory: 'Room',
+                        eventAction: 'initError',
+                        eventLabel: this.room + "'s room"
+                    });
                 });
 
                 this.ga = window.ga || function() {};
@@ -139,8 +159,9 @@
                 return { value: '' + isOn, room: room }
             },
             handleError: function(error) {
-                console.error('Something went wrong?');
                 console.error(error);
+                this.errors.push("The switch. We can't have nice things.");
+
                 this.ga('send', {
                     hitType: 'event',
                     eventCategory: 'Room',

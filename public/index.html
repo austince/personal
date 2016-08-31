@@ -16,8 +16,10 @@
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- Polymer Elements -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
     <link rel="import" href="polymer/light-switch.html">
+
+    <!-- isMobile -->
+    <script src="bower_components/isMobile/isMobile.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -74,7 +76,7 @@
     <!-- Intro Header -->
     <header class="intro panel-video">
         <!-- Background video from Venture Hacks -->
-        <video autoplay preload loop muted>
+        <video autoplay preload loop muted poster="assets/venturehacks2016poster.png">
             <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.mp4" type="video/mp4"/>
             <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.ogg" type="video/ogg"/>
             <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.webm" type="video/webm"/>
@@ -105,33 +107,36 @@
     <section id="about" class="container content-section text-center">
         <h2 class="section-title"><span class="highlight">me</span></h2>
 
-        <p>If you've come to flicker my house lights, scroll no further.</p>
-        <div class="row about-lights">
-            <div class="col-md-4 col-xs-12">
-                <light-switch room="austin" label="My room"></light-switch>
+        <div class="about-content">
+            <p>If you've come to flicker my house lights, scroll no further.</p>
+            <div class="row about-lights">
+                <div class="col-lg-3 col-md-1"></div>
+                <div class="col-lg-2 col-md-4 col-xs-12">
+                    <light-switch room="austin" label="My room"></light-switch>
+                </div>
+                <div class="col-lg-2 col-md-2"></div>
+                <div class="col-lg-2 col-md-4 col-xs-12">
+                    <light-switch room="julian" label="My roomate's room"></light-switch>
+                </div>
+                <div class="col-lg-3 col-md-1"></div>
             </div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4 col-xs-12">
-                <light-switch room="julian" label="My roomate's room"></light-switch>
-            </div>
-        </div>
-        <div class="row about-content">
 
-        </div>
-        <div class="row social-links">
-            <div class="col-lg-8 col-lg-offset-2">
-                <ul class="list-inline banner-social-buttons">
-                    <li>
-                        <a href="https://github.com/austincawley" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
-                    </li>
-                    <li>
-                        <a href="mailto:austin.cawley@gmail.com?subject=Looking+for+love" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com/in/austincawley" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
-                    </li>
-                </ul>
+            <div class="row social-links">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <ul class="list-inline banner-social-buttons">
+                        <li>
+                            <a href="https://github.com/austincawley" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
+                        </li>
+                        <li>
+                            <a href="mailto:austin.cawley@gmail.com?subject=Looking+for+love" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/in/austincawley" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </section>
 
@@ -211,6 +216,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Polymer -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>

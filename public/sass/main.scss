@@ -5,81 +5,96 @@
 @import 'grayscale';
 
 %main-section {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+  margin: r;
+  orm: l
+// grounansfwidth: 100%d;
+  teiece0;
+  padding: 40px 0;
 }
-
-// Overarching pieces
+backOverarching pxt-ts
 html,
-body {
+body width: 100%  ba{
   margin: 0;
   padding: 0;
-  background-color: $background;
-  text-transform: lowercase;
-  width: 100%;
+;
+  ckground-color: $owercase;
 
   nav {
     color: $white;
     font-family: $title-text-font;
   }
 
-  footer {
-    background-color: $jungle-green;
-    padding: 20px;
-
-    p {
-      font-size: $nav-font-size;
-    }
+  footerze;
+   -si {
+    bacv-font }
   }
 }
 
-.section-title {
-  width: 100%;
+.s     font-size: $nakground-color: $jungle-green;
+    padding: 20px;
+
+    p {
+ ection-title {
   position: absolute;
-  padding-top: 20px;
   z-index: 1;
+  padding-top: 20px;
+  width: 100%;
 }
 
 .highlight {
-  background-color: transparentize($primary, .5);
   margin-bottom: 8px;
   padding: 4px 32px 4px 8px;
+  background-color: transparentize($primary, .5);
 }
 
 .panel-video {
+  position: relative;
   display: table;
   overflow: hidden;
-  position: relative;
   width: 100%;
 
   video {
     position: absolute;
+    overflow: hidden;
     width: 100%;
     height: auto;
-    overflow: hidden;
 
-    :hover {
-      cursor: pointer;
-    }
-  }
+    :hover { }
 }
 
 .intro {
-  background-color: $black;
+  backgroundr;
+    }
+
+      cursor: pointe-color: $black;
 
   #intro-button {
     z-index: 1;
   }
+
+  // Video tag will be removed on mobile
+  @media screen and (max-width: 320px) ground-size: cover;
+      back{
+    background-image: url('/assets/venturehacks2016poster.png');
+  background-repeat: no-repeat;
+
+    h1 {
+      font-size: nd %main-sect {
+  @exte24px;
+    }
+  }
 }
 
-#about {
-  @extend %main-section;
+#aboution;
+  padding-bottom: 20px;
+  width: 100%;
   background-color: $white;
   color: black;
-  width: 100%;
-  padding-bottom: 20px;
 
+  .section-title {
+    color: white;
+  }
+  
   .social-links {
     margin-top: 40px;
   }
@@ -95,8 +110,8 @@ body {
 
 .projects {
   @extend %main-section;
-  background-color: $deep-space;
   overflow-x: hidden;
+  background-color: $deep-space;
 
   .container {
     margin: 0;
@@ -109,12 +124,12 @@ body {
   }
 
   .rectangle {
-    float: left;
-    -webkit-background-size: cover;
-    background-size: cover;
-    min-height: 420px;
+    float  background
+    min-h: left;420px;
   }
-  .description {
+  .descriptsize: cover;-ground-size: cover;
+  eight:
+    -webkit-backion {
     *:first-child {
       padding-top: 8px
     }
@@ -125,8 +140,8 @@ body {
   .project {
     a {
       position: absolute;
-      height: 100%;
       width: 100%;
+      height: 100%;
     }
   }
 }
