@@ -76,14 +76,12 @@
     <!-- Intro Header -->
     <header class="intro panel-video">
         <!-- Background video from Venture Hacks -->
-        <video autoplay preload loop muted poster="assets/venturehacks2016poster.png">
-            <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.mp4" type="video/mp4"/>
-            <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.ogg" type="video/ogg"/>
-            <source src="https://storage.googleapis.com/personal-71b23.appspot.com/videos/venturehacks2016.webm" type="video/webm"/>
+        <video class="loading" autoplay preload loop muted poster="assets/venturehacks2016poster.png">
+            <source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>
         </video>
 
         <div class="intro-body">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading">
@@ -92,7 +90,7 @@
                             <span class="highlight">cawley - edwards</span>
                         </h1>
                         <p class="intro-text">
-                            <span class="highlight">i'm a generalist.</span>
+                            <span class="highlight">people - entrepreneurship - cs</span>
                         </p>
                         <a id="intro-button" href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-hand-peace-o animated"></i>
@@ -104,99 +102,226 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <h2 class="section-title"><span class="highlight">me</span></h2>
+    <section id="about" class="content-section text-center">
+        <h2 class="section-title col-xs-12"><span class="highlight">me</span></h2>
 
-        <div class="about-content">
-            <p>If you've come to flicker my house lights, scroll no further.</p>
-            <div class="row about-lights">
-                <div class="col-lg-3 col-md-1"></div>
-                <div class="col-lg-2 col-md-4 col-xs-12">
+        <div class="container-fluid about-content">
+            <header class="row about-subtitle">
+                <h3>entrepreneurship</h3>
+            </header>
+            <div class="row">
+                <div class="col-lg-3 col-sm-1"></div>
+                <article class="col-lg-2 col-sm-3 col-xs-12">
+                    <a href="http://truckpallet.com" target="_blank">
+                        <img src="/assets/palletLogo.png">
+                        <h4>Pallet Technologies inc.</h4>
+                    </a>
+                    <ul>
+                        <li>co-founded a startup on the 'uber for trucking' model.</li>
+                        <li>headed the technology development.</li>
+                        <li>ended abruptly, ask me what i learned!</li>
+                    </ul>
+                </article>
+                <div class="col-lg-2 col-sm-4 col-xs-12">
+
+                </div>
+                <article class="col-lg-2 col-sm-3 col-xs-12">
+                    <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams" target="_blank">
+                        <img src="/assets/stevensVentureCenterLogo.png">
+                        <h4>Stevens Venture Center</h4>
+                    </a>
+                    <ul>
+                        <li>currently helping Stevens to redefine entrepreneurial education.</li>
+                        <li>organizing hackathons, creative space, and support for passionate people.</li>
+                    </ul>
+                </article>
+                <div class="col-lg-3 col-sm-1"></div>
+            </div>
+
+            <header class="row about-subtitle">
+                <h3>education</h3>
+            </header>
+            <div class="row">
+                <div class="col-lg-3 col-sm-1"></div>
+                <article class="col-lg-2 col-sm-3 col-xs-12">
+                    <a href="http://www.wuhsms.org/" target="_blank">
+                        <img src="/assets/woodstockLogo.png">
+                        <h4>Woodstock Union High School</h4>
+                    </a>
+                    <ul>
+                        <li>Summa Cum Laude.</li>
+                        <li>Graduated with a class of 89.</li>
+                        <li>Rural upbringing for the win.</li>
+                    </ul>
+                </article>
+                <div class="col-lg-2 col-sm-4 col-xs-12">
+
+                </div>
+                <article class="col-lg-2 col-sm-3 col-xs-12">
+                    <a href="https://stevens.edu" target="_blank">
+                        <img src="/assets/stevensColorLogo.png">
+                        <h4>Stevens Institute of Technology</h4>
+                    </a>
+                    <ul>
+                        <li>Computer Science.</li>
+                        <li>My current location.</li>
+                        <li>Have found many great mentors and a helping community.</li>
+                        <li>Class of 2018.</li>
+                    </ul>
+                </article>
+                <div class="col-lg-3 col-sm-1"></div>
+            </div>
+
+            <header class="row about-subtitle">
+                <h3>travel</h3>
+            </header>
+            <div class="row">
+                <div class="col-lg-3 col-sm-1"></div>
+                <article class="col-lg-2 col-sm-3 col-xs-12">
+                    <img src="/assets/eco-field.svg">
+                    <h4>Gap Year</h4>
+                    <ul>
+                        <li>Spent half a year working on farms, in kitchens, and with families around Europe.</li>
+                        <li>The other half was spent working on a local vineyard in Barnard, VT.</li>
+                    </ul>
+                </article>
+                <div class="col-lg-2 col-sm-4 col-xs-12">
+
+                </div>
+                <article class="col-lg-2 col-sm-3 col-xs-12">
+                    <a href="https://goo.gl/khKZ4W" target="_blank">
+                        <img src="/assets/midPyreneesLogoText.png">
+                        <h4>Lycée de Bagatelle</h4>
+                    </a>
+                    <ul>
+                        <li>Semester abroad during my junior year of highschool.</li>
+                        <li>Lived with a family in Saint Gaudens, France.</li>
+                        <li>Honors Science Track.</li>
+                    </ul>
+                </article>
+                <div class="col-lg-3 col-sm-1"></div>
+            </div>
+
+
+            <header class="row about-subtitle">
+                <h3>home</h3>
+            </header>
+            <div class="row">
+                <div class="col-lg-3 col-sm-1"></div>
+                <div class="col-lg-2 col-sm-4 col-xs-12">
                     <light-switch room="austin" label="My room"></light-switch>
                 </div>
-                <div class="col-lg-2 col-md-2"></div>
-                <div class="col-lg-2 col-md-4 col-xs-12">
-                    <light-switch room="julian" label="My roomate's room"></light-switch>
+                <div class="col-lg-2 col-sm-2"></div>
+                <div class="col-lg-2 col-sm-4 col-xs-12">
+                    <light-switch room="julian" label="My roommate's room"></light-switch>
                 </div>
-                <div class="col-lg-3 col-md-1"></div>
+                <div class="col-lg-3 col-sm-1"></div>
             </div>
 
             <div class="row social-links">
-                <div class="col-lg-8 col-lg-offset-2">
+                <div class="col-sm-10 col-sm-offset-2">
                     <ul class="list-inline banner-social-buttons">
                         <li>
-                            <a href="https://github.com/austincawley" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
+                            <a href="https://github.com/austincawley" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
                         </li>
                         <li>
-                            <a href="mailto:austin.cawley@gmail.com?subject=Looking+for+love" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
+                            <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
                         </li>
                         <li>
-                            <a href="https://linkedin.com/in/austincawley" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
+                            <a href="https://linkedin.com/in/austincawley " target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
                         </li>
                     </ul>
                 </div>
             </div>
-
         </div>
     </section>
 
     <section id="projects" class="projects content-section">
-        <h2 class="section-title text-center"><span class="highlight">projects</span></h2>
-
-        <!-- Venture hacks -->
-        <!-- Dirty Bomb -->
-        <!-- Contracts Go -->
-        <!-- Vets 4 Warriors -->
-        <div class="container">
-            <div class="row project-row">
-                <article class="rectangle project col-lg-8 col-md-8 col-sm-12 col-xs-12"
-                     style="background-image: url(assets/lafayette1.jpg)">
-                    <a href="http://venturehacks.xyz" target="_blank" class="project-link"></a>
-                </article>
-                <article class="rectangle description col-lg-4 col-md-4 col-sm-12 col-xs-12"
-                    style="background-image: url(assets/zombie.gif)">
-                    <h3>Venture Hacks</h3>
-                    <p>WHAT: A new hackathon initiative through the Stevens Venture Center.
-                    Focused on entrepreneurship.
-                    </p>
-                    <p>ME: Organizer</p>
-                    <p>WHY THIS IS FEATURED: </p>
-                    <p>WHY CARE? Teaching is the best way to learn, education is the best way to freedom.</p>
-                </article>
+        <div class="container-fluid">
+            <div class="row">
+                <h2 class="section-title text-center col-xs-12"><span class="highlight">projects</span></h2>
             </div>
 
-            <div class="row project-row">
-                <article class="rectangle description col-lg-4 col-md-4 col-sm-12 col-xs-12"
-                         style="background-color: black;">
-                    <h3>Dirty Bomb</h3>
-                    <p>WHAT: A javascript library for simulating the effects of a 'dirty bomb' explosion.
-                        In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex Wellerstein</a>, researched over the summer 2016.
-                    </p>
-                    <p>ME: Developer + Researcher</p>
-                    <p>WHY CARE? </p>
-                    <p>TECH USED: ES6 + babel + gulp + nodejs</p>
+            <div class="row project-row first-project">
+                <article class="rectangle project col-sm-7  col-xs-12"
+                         style="background-image: url(assets/vets.gif)">
+                    <a class="project-link" href="http://vets.cawleyedwards.com/resources" target="_blank">
+                    </a>
                 </article>
-                <article class="rectangle project col-lg-8 col-md-8 col-sm-12 col-xs-12"
-                         style="background-image: url(assets/lafayette1.jpg)">
-                    <a class="project-link" href="http://github.com/austincawley/dirtybomb" target="_blank"></a>
-                </article>
-            </div>
-
-            <div class="row project-row">
-                <article class="rectangle project col-lg-8 col-md-8 col-sm-12 col-xs-12"
-                         style="background-image: url(assets/lafayette1.jpg)">
-                    <a class="project-link" href="http://vets.cawleyedwards.com/resources" target="_blank"></a>
-                </article>
-                <article class="rectangle description col-lg-4 col-md-4 col-sm-12 col-xs-12"
-                         style="background-color: black;">
+                <article class="rectangle description col-sm-5 col-xs-12 violet">
                     <h3>Vets 4 Warriors Online Resource</h3>
-                    <p>WHAT: Worked closely with <a href="http://vets4warriors.com" target="_blank">Vets 4 Warriors</a>
-                        , a suicide prevention hotline, in their New Jersey branch. Met with their counselors regularly
-                        and designed a system to help them pool their collective resources.
+                    <p><b>WHAT:</b> Worked closely with <a href="http://vets4warriors.com" target="_blank">Vets 4 Warriors</a>
+                        , a suicide prevention hotline, in their New Jersey branch. Met with their counselors regularly.
+                        designed a system to help them pool their collective resources.
                     </p>
-                    <p>ME: Developer + Lead </p>
-                    <p>WHY CARE? </p>
-                    <p>TECH USED: angular 1 + nodejs + flask + mongo</p>
+                    <p><b>ME:</b> Developer + Lead </p>
+                    <p><b>WHY CARE?</b> this was an opportunity to truly help. No matter how one feels about social stances,
+                        the military, etc. I think it's important to help people be happy.</p>
+                    <p><b>TECH USED:</b> angular 1 + nodejs + flask + mongo</p>
+                </article>
+            </div>
+
+            <div class="row project-row">
+                <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 pink">
+                    <h3>News Sentiment - Visualizing Society</h3>
+                    <p><b>WHAT:</b> My final project for HST 325, visualizing society, during sophmore year. I aimed to show
+                        how sentiment is linked through our news, but moreso the difference in popularity between various
+                        articles based on their level of 'positivity'. I <a href="https://github.com/austincawley/news-sentiment" target="_blank">
+                            used python to scrape google news</a>
+                        and a third party api to analyze the article's sentiment.<br>
+                        See my other projects for the class <a href="http://personal.stevens.edu/~acawleye">here.</a>
+                    </p>
+                    <p><b>ME:</b> lowly student </p>
+                    <p><b>WHY CARE?</b> I'm interested in how technology influences us, but even more with
+                        how people are influenced by people. This project let me explore both.</p>
+                    <p><b>TECH USED:</b> d3.js + beautifulSoup4 + flask + mongo</p>
+                </article>
+                <article class="rectangle project col-lg-7 col-sm-7  col-xs-12"
+                         style="background-image: url(assets/newsWeb.gif)">
+                    <a class="project-link" href="http://personal.stevens.edu/~acawleye/final/" target="_blank">
+                    </a>
+                </article>
+            </div>
+
+            <div class="row project-row">
+                <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
+                         style="background-image: url(assets/dirtybombVis.gif)">
+                    <a class="project-link" href="http://github.com/austincawley/dirtybomb" target="_blank">
+                    </a>
+                </article>
+                <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">
+                    <h3>Dirty Bomb</h3>
+                    <p><b>WHAT:</b> A <a href="https://github.com/austincawley/dirtybomb" target="_blank">javascript library</a>
+                        for simulating the effects of a 'dirty bomb' explosion.
+                        In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex Wellerstein</a>,
+                        researched over the summer 2016.<br>
+                        I did a little <a href="https://medium.com/@austin.cawley/dirty-bomb-simulation-done-dirty-ef1450349950#.bjaxd716v" target="_blank">
+                            write-up
+                        </a> too.
+                    </p>
+                    <p><b>ME:</b> Developer + Researcher</p>
+                    <p><b>WHY CARE?</b> I love and actively pursue using computer science in 'non-technical' fields
+                        with 'non-technical' people. This was a great learning experience both in applying my programming
+                        ability and working with people from different background. History baby.</p>
+                    <p><b>TECH USED:</b> ES6 + babel + gulp + nodejs</p>
+                </article>
+            </div>
+
+            <div class="row project-row">
+                <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 white">
+                    <h3>Venture Hacks</h3>
+                    <p><b>WHAT:</b> A hackathon initiative through the
+                        <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams" target="_blank">
+                            Stevens Venture Center</a>.
+                        It's focused on entrepreneurship. We are finding and educating young people with the talent and
+                        courage to create their own companies.
+                    </p>
+                    <p><b>ME:</b> Co-creator + Co-organizer</p>
+                    <p><b>WHY CARE?</b> Teaching is the best way to learn, education is the best way to freedom.</p>
+                </article>
+                <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
+                         style="background-image: url(assets/venturehacks2016.gif)">
+                    <a href="http://venturehacks.xyz" target="_blank" class="project-link"></a>
                 </article>
             </div>
 
@@ -207,7 +332,9 @@
     <footer>
         <!-- Something funny -->
         <div class="container text-center">
-            <p>Persons attempting to find a motive in this narrative will be prosecuted; persons attempting to find a moral in it will be banished; persons attempting to find a plot in it will be shot</p>
+            <a href="https://www.youtube.com/watch?v=OSICJJq86ic" target="_blank">
+                <p>persons attempting to find a plot in [this narrative] will be shot</p>
+            </a>
         </div>
     </footer>
 

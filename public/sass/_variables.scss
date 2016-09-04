@@ -1,17 +1,22 @@
 // Coolors Exported Palette - coolors.co/1e3231-486664-7c9392-a5d1ce-bef4f2
 // Palette
-$jungle-green: rgba(30, 50, 49, 1);
-$deep-space: rgba(72, 102, 100, 1);
+$jungle-green: rgb(30, 50, 49);
+$deep-space: rgb(72, 102, 100);
 $roman-silver: rgba(124, 147, 146, 1);
 $pastel-blue: rgba(165, 209, 206, 1);
+$pastel-grey: #cdcacc;
 $diamond: rgba(190, 244, 242, 1);
-$white: #fff;
-$black: #000;
+$white: #fdfdff;
+$black: #020202;
+
+$prussian-blue: #0d324d;
+$chinese-violet: #7f5a83;
+$carmine-pink: #e94f37;
 
 $primary: $roman-silver;
 $secondary: $jungle-green;
-$accent: $diamond;
-$background: $jungle-green;
+$accent: $carmine-pink;
+$background: $white;
 
 $title-text-font: 'Abel', serif;
 $body-text-font: 'Lato', sans-serif;
@@ -21,3 +26,5 @@ $title-intro-font-size: 18px;
 $heading-font-size: 18px;
 $nav-font-size: 16px;
 $body-font-size: 18px;
+
+$sm-cutoff: 767px;

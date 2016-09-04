@@ -19,6 +19,11 @@ $(function() {
     video.prop('muted', !video.prop('muted'));
   });
 
+  video.on('loadeddata', function() {
+    // remove the loading class to reset scale from poster
+    video.removeClass('loading');
+  });
+
   // Hide the video on all mobile devices but allow small screen computers to play it
   // Just don't want to deal with autoplay on mobile
   if(isMobile.any) {

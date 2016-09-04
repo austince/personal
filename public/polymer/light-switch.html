@@ -1,3 +1,13 @@
+<!--
+
+
+Custom variables:
+--light-switch-ink-color
+--light-switch-on-color
+--light-switch-outline-color
+--light-switch-error-color
+-->
+
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/iron-icons/iron-icons.html">
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
@@ -12,22 +22,21 @@
             :host {
                 display: inline-block;
                 cursor: pointer;
-                max-width: 80%;
             }
 
             :host([is-on]) paper-icon-button {
-                background-color: var(--paper-yellow-200);
+                background-color: var(--light-switch-on-color, --paper-yellow-200);
             }
 
             :host .error {
-                color: red;
+                color: var(--light-switch-error-color, red);
             }
 
             paper-icon-button {
-                fill: black;
+                fill: var(--light-switch-outline-color, black);
                 height: 64px;
                 width: 64px;
-                --paper-icon-button-ink-color: var(--paper-yellow-300);
+                --paper-icon-button-ink-color: var(--light-switch-ink-color, --paper-yellow-900);
                 border-radius: 50%;
                 padding: 2px;
             }
