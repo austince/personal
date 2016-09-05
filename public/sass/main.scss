@@ -6,17 +6,15 @@
 
 %main-section {
   //width: 100%;
-  margin-transform:}
+  //margin-transform:
+}
 
-/ckground;
-   pie: 0;
-  padding: 40px 0;
- $ba/ Overarchingtextces
 html,
 body {
   margin: 0;
   padding: 0;
-  background-color: lowercase;
+  background-color: $background;
+  text-transform: lowercase;
   //width: 100%;
 
   nav {
@@ -24,33 +22,35 @@ body {
     font-family: $title-text-font;
   }
 
-  fo
-
-    p {
- ter {
-    bac    }o     fon {
-      color: white;
-kground-color: $jungle-green;
+  footer {
+    background-color: $jungle-green;
     padding: 20px;
 
-    at-size: $nav-font-size * .9;
+    a:hover {
+      p {
+        color: lighten($black, 5);
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: $nav-font-size * .9;
     }
   }
 }
 
 .section-title {
+  padding-top: 20px;
   position: absolute;
   z-index: 1;
-  padding-top: 20px;
 }
 
 .highlight {
+  background-color: transparentize($primary, .5);
   margin-bottom: 8px;
   padding: 4px 32px 4px 8px;
-  background-color: transparentize($primary, .5);
 }
 
-// For the grid descriptions
 .black {
   background-color: $black;
 }
@@ -61,13 +61,13 @@ kground-color: $jungle-green;
 }
 
 .violet {
-  background-color: $prussian-olor: $carmine-pink;
-
-  a {ckground-cblue;
+  background-color: $prussian-blue;
 }
 
 .pink {
-  ba
+  background-color: $carmine-pink;
+
+  a {
     color: lighten($black, 10);
 
     &:hover {
@@ -76,23 +76,22 @@ kground-color: $jungle-green;
   }
 }
 
-// Beginning of larger chunks
 .panel-video {
-   table;
-  overflow  ovdisplayuto;
-  : a:erflow: hiddeght: hidden;
-  positposition: absolutee;
+  display: table;
+  overflow: hidden;
+  position: relative;
 
   video {
-    hein;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
     width: 100%;
-    ion: relativ;
 
-    &:hover  &.loading {
+    &:hover {
+      cursor: pointer;
     }
 
-   {
-      cursor: pointer;
+    &.loading {
       min-height: 100%;
     }
   }
@@ -109,9 +108,10 @@ kground-color: $jungle-green;
     margin: 0;
     padding: 0;
   }
+}
 
-  // Video tag will be removed on mobile
-  @media screen and (max-width: $sm-cutoff) {
+@media screen and (max-width: $sm-cutoff) {
+  .intro {
     background: url('/assets/venturehacks2016poster.png') no-repeat;
     background-size: cover;
 
@@ -123,36 +123,21 @@ kground-color: $jungle-green;
 }
 
 #about {
-  @extend %main-section;
-  tom: 20px;
-
-  .sec
-
-;
   background-color: $white;
-  tion-title {
--botcolor: $black  .row {
-    margin-bottom:    color: $white;
-  }//width: 1margin-top: 10px;
-    00%;
-  padding 10px;
+  color: $black;
+  padding-bottom: 20px;
+
+  .section-title {
+    color: $white;
   }
 
-  @media (max-width: $sm-cutoff) {
-    // Each 'experience'
-    article {
-      margin-bottom: 20px;
-    }
+  .row {
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .social-links {
     margin-top: 40px;
-
-    @media (max-width: $sm-cutoff) {
-      a {
-        margin-bottom: 8px;
-      }
-    }
   }
 
   .about-content {
@@ -163,14 +148,11 @@ kground-color: $jungle-green;
     max-width: 80%;
   }
 
-  // Experience
-  article {
-    a {
-      color: $black;
+  article a {
+    color: $black;
 
-      &:hover {
-        color: lighten($secondary, 15);
-      }
+    &:hover {
+      color: $secondary;
     }
   }
 
@@ -183,17 +165,35 @@ kground-color: $jungle-green;
     width: 64px;
   }
 
-  ul {
-    margin-left: 10%;
-    padding-left: 0;
-    width: 80%;
-    list-style: none;
+  article {
+    ul {
+      list-style: none;
+      width: 80%;
+      margin-left: 10%;
+      padding-left: 0;
 
-    li {
-      margin-bottom: 4px;
+      li {
+        margin-bottom: 4px;
+      }
     }
+  }
+}
 
-    @media (max-width: $sm-cutoff) {
+@media (max-width: $sm-cutoff) {
+  #about article {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: $sm-cutoff) {
+  #about .social-links a {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: $sm-cutoff) {
+  #about article{
+    ul {
       margin-left: 5%;
       width: 90%;
 
@@ -205,24 +205,23 @@ kground-color: $jungle-green;
 }
 
 .projects {
-  @extend %main-section;
+  background-color: $primary;
   overflow-x: hidden;
   padding-top: 0;
   padding-bottom: 0;
-  background-color: $deep-space;
 
   .project-row {
-        dlow: hidd: table;
-  overf 420px;
+    min-height: 420px;
+    overflow: hidden;
+    display: table;
+  }
 
-min-height:isplayen; }
-
-  cell;
-    float:  covtable-  padding.recta   display:;
-    background-size:ngle {
-    -er;
-  over: 0;
- none;webkit-background-size: c
+  .rectangle {
+    -webkit-background-size: cover;
+    background-size: cover;
+    padding: 0;
+    display: table-cell;
+    float: none;
   }
 
   .description {
@@ -237,15 +236,17 @@ min-height:isplayen; }
 
   .project {
     background-size: cover;
+
     a {
-      position: absolute;
       width: 100%;
+      position: absolute;
       height: 100%;
     }
   }
+}
 
-  @media (max-width: $sm-cutoff) {
-    // When projects disappear, give the title some room to breath
+@media (max-width: $sm-cutoff) {
+  .projects {
     background-color: $prussian-blue;
 
     .first-project {
