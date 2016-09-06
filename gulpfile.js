@@ -1,13 +1,19 @@
+const browserSync = require('browser-sync').create();
+const pkg = require('./package.json');
+
 const gulp = require('gulp');
+const sequence = require('gulp-sequence');
 const clean = require('gulp-clean');
 const sass = require('gulp-sass');
-const browserSync = require('browser-sync').create();
 const header = require('gulp-header');
 const cleanCSS = require('gulp-clean-css');
+const minifyHtml = require('gulp-minify-html');
+const vulcanize = require('gulp-vulcanize');
 const rename = require("gulp-rename");
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
-const pkg = require('./package.json');
+const usemin = require('gulp-usemin');
+const rev = require('gulp-rev');
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -59,16 +65,24 @@ gulp.task('minify-js', function() {
       }))
 });
 
-gulp.task('clean', function() {
+gulp.task('clean-build', function() {
+  return gulp.src([
+    'public/**.build.**',
+  ], { read: false })
+    .pipe(clean())
+});
+
+gulp.task('clean', ['clean-build'], function() {
   return gulp.src([
     'public/css',
-    'public/js/*.min.js'
+    'public/js/*.min.js',
+    'dist'
   ], { read: false })
     .pipe(clean())
 });
 
 // Run everything
-gulp.task('default', ['sass', 'minify-css', 'minify-js']);
+gulp.task('default', sequence('sass', ['minify-js', 'minify-css']));
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -93,3 +107,40 @@ gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() 
     gulp.watch('public/**/*.html', browserSync.reload);
     gulp.watch('public/js/**/*.js', browserSync.reload);
 });
+
+gulp.task('build-polymer', function() {
+  return gulp.src('public/*.html')
+    .pipe(vulcanize({
+      abspath: '',
+      inlineScripts: false,
+      inlineCss: false,
+      stripComments: false,
+    }))
+    .pipe(rename({
+      suffix: '.build'
+    }))
+    .pipe(gulp.dest('public'));
+});
+
+gulp.task('build-bundle', function() {
+  return gulp.src('public/*.build.html')
+    .pipe(usemin({
+      css: [ rev ],
+      html: [ function() { return minifyHtml({ empty: true }) }],
+      js: [ rev ]
+    }))
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build-copyStatic', function() {
+  gulp.src('public/bower_components/font-awesome/fonts/*', { base: 'public/bower_components/font-awesome' })
+    .pipe(gulp.dest('dist'));
+
+  return gulp.src([
+    'public/assets/*',
+    'public/favicon.ico'
+  ], { base: 'public' })
+    .pipe(gulp.dest('dist'));
+});
+
+gulp.task('build', sequence('clean', 'default', 'build-polymer', 'build-copyStatic', 'build-bundle', 'clean-build'));

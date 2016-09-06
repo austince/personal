@@ -12,8 +12,8 @@
     ],
     "cleanUrls": true,
     "ignore": [
-      "*.css",
-      "**/*@(.js|.css)",
+      "*.scss",
+      "**/*@(.js|.css|.scss)",
       "!**/*.min.*"
     ]
   }
