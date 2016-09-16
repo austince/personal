@@ -1,0 +1,12 @@
+root: true
+
+env:
+  browser: true
+  jquery: true
+
+extends:
+    "airbnb-base/legacy"
+
+rules:
+  vars-on-top: 0
+  no-plusplus: 0

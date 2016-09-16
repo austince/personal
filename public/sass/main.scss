@@ -1,8 +1,8 @@
 // Grayscale theme
-@import 'fonts';
-@import 'variables';
-@import 'mixins';
-@import 'grayscale';
+@import "fonts";
+@import "variables";
+@import "mixins";
+@import "grayscale";
 
 %main-section {
   //width: 100%;
@@ -112,7 +112,7 @@ body {
 
 @media screen and (max-width: $sm-cutoff) {
   .intro {
-    background: url('/assets/venturehacks2016poster.png') no-repeat;
+    background: url("/assets/venturehacks2016poster.png") no-repeat;
     background-size: cover;
 
     h1 {
@@ -122,7 +122,7 @@ body {
   }
 }
 
-#about {
+.about {
   background-color: $white;
   color: $black;
   padding-top: 60px;
@@ -149,14 +149,6 @@ body {
     max-width: 80%;
   }
 
-  article a {
-    color: $black;
-
-    &:hover {
-      color: $secondary;
-    }
-  }
-
   h4 {
     margin-bottom: 20px;
   }
@@ -167,6 +159,14 @@ body {
   }
 
   article {
+    a {
+      color: $black;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
     ul {
       list-style: none;
       width: 80%;
@@ -178,29 +178,23 @@ body {
       }
     }
   }
-}
 
-@media (max-width: $sm-cutoff) {
-  #about article {
-    margin-bottom: 20px;
-  }
-}
+  @media (max-width: $sm-cutoff) {
+    article {
+      margin-bottom: 20px;
 
-@media (max-width: $sm-cutoff) {
-  #about .social-links a {
-    margin-bottom: 8px;
-  }
-}
+      ul {
+        margin-left: 5%;
+        width: 90%;
 
-@media (max-width: $sm-cutoff) {
-  #about article{
-    ul {
-      margin-left: 5%;
-      width: 90%;
-
-      li {
-        text-align: center;
+        li {
+          text-align: center;
+        }
       }
+    }
+
+    .social-links a {
+      margin-bottom: 8px;
     }
   }
 }
@@ -230,8 +224,18 @@ body {
       padding-top: 8px;
     }
 
-    h3, p {
+    h3,
+    p {
       padding: 0 8px;
+    }
+
+    .btn-container {
+      width: 100%;
+      text-align: center;
+
+      .btn {
+        margin: 16px auto;
+      }
     }
   }
 
@@ -243,19 +247,35 @@ body {
       position: absolute;
       height: 100%;
     }
-  }
-}
 
-@media (max-width: $sm-cutoff) {
-  .projects {
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  @media (max-width: $xs-cutoff) {
     background-color: $prussian-blue;
 
     .first-project {
       padding-top: 60px;
     }
 
-    .project {
-      display: none;
+    .project-row {
+      display: flex;
+      flex-flow: column;
+
+      .description {
+        order: 1;
+      }
+
+      .project {
+        order: 2;
+        min-height: 420px;
+      }
+
+      .project-link {
+        display: none;
+      }
     }
   }
 }

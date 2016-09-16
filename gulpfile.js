@@ -14,6 +14,8 @@ const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 const usemin = require('gulp-usemin');
 const rev = require('gulp-rev');
+const scssLint = require('gulp-scss-lint');
+const eslint = require('gulp-eslint');
 
 // Set the banner content
 const banner = ['/*!\n',
@@ -23,6 +25,23 @@ const banner = ['/*!\n',
     ' */\n',
     ''
 ].join('');
+
+
+// Linting
+gulp.task('lint-js', function() {
+    return gulp.src(['public/js/*.js', '!public/js/*.min.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
+gulp.task('lint-styles', function() {
+    return gulp.src(['public/sass/*.scss'])
+        .pipe(scssLint({
+            'config': '.scss-lint.yml'
+        }))
+        .pipe(scssLint.failReporter('E'));
+});
 
 // Compile Sass files
 gulp.task('sass', function() {

@@ -53,7 +53,7 @@
             <div class="container">
                 <header class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                        Menu <i class="fa fa-bars"></i>
+                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand page-scroll" href="#page-top">
                         <span class="light">austin</span>
@@ -85,7 +85,7 @@
         <header class="intro panel-video">
             <!-- Background video from Venture Hacks -->
             <video class="loading" autoplay preload loop muted poster="assets/venturehacks2016poster.png">
-                <source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>
+                <!--<source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>-->
             </video>
 
             <div class="intro-body">
@@ -110,7 +110,7 @@
         </header>
 
         <!-- About Section -->
-        <section id="about" class="content-section text-center">
+        <section id="about" class="about content-section text-center">
             <h2 class="section-title col-xs-12"><span class="highlight">me</span></h2>
 
             <div class="container-fluid about-content">
@@ -230,13 +230,16 @@
                     <div class="col-sm-12">
                         <ul class="list-inline banner-social-buttons">
                             <li>
-                                <a href="https://github.com/austincawley" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
+                                <a href="https://github.com/austincawley" target="_blank" class="btn btn-default btn-lg">
+                                    <i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
                             </li>
                             <li>
-                                <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection" class="btn btn-default btn-lg"><i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
+                                <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection" class="btn btn-default btn-lg">
+                                    <i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
                             </li>
                             <li>
-                                <a href="https://linkedin.com/in/austincawley " target="_blank" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
+                                <a href="https://linkedin.com/in/austincawley " target="_blank" class="btn btn-default btn-lg">
+                                    <i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
                             </li>
                         </ul>
                     </div>
@@ -267,6 +270,14 @@
                         <p><b>WHY CARE?</b> this was an opportunity to truly help. No matter how one feels about social stances,
                             the military, etc. I think it's important to help people be happy.</p>
                         <p><b>TECH USED:</b> angular 1 + nodejs + flask + mongo</p>
+
+                        <!-- Only show for mobile devices -->
+                        <div class="btn-container">
+                            <a href="http://vets.cawleyedwards.com/resources" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                                <i class="fa fa-hand-peace-o animated"></i>
+                                <span>Check it out!</span>
+                            </a>
+                        </div>
                     </article>
                 </div>
 
@@ -284,6 +295,13 @@
                         <p><b>WHY CARE?</b> I'm interested in how technology influences us, but even more with
                             how people are influenced by people. This project let me explore both.</p>
                         <p><b>TECH USED:</b> d3.js + beautifulSoup4 + flask + mongo</p>
+
+                        <div class="btn-container">
+                            <a href="http://personal.stevens.edu/~acawleye/final/" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                                <i class="fa fa-hand-peace-o animated"></i>
+                                <span>Check it out!</span>
+                            </a>
+                        </div>
                     </article>
                     <article class="rectangle project col-lg-7 col-sm-7  col-xs-12"
                              style="background-image: url(assets/newsWeb.gif)">
@@ -295,13 +313,12 @@
                 <div class="row project-row">
                     <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
                              style="background-image: url(assets/dirtybombVis.gif)">
-                        <a class="project-link" href="http://github.com/austincawley/dirtybomb" target="_blank">
+                        <a class="project-link" href="https://github.com/austincawley/dirtybomb" target="_blank">
                         </a>
                     </article>
                     <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">
                         <h3>Dirty Bomb</h3>
-                        <p><b>WHAT:</b> A <a href="https://github.com/austincawley/dirtybomb" target="_blank">javascript library</a>
-                            for simulating the effects of a 'dirty bomb' explosion.
+                        <p><b>WHAT:</b> A javascript library for simulating the effects of a 'dirty bomb' explosion.
                             In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex Wellerstein</a>,
                             researched over the summer 2016.<br>
                             I did a little <a href="https://medium.com/@austin.cawley/dirty-bomb-simulation-done-dirty-ef1450349950#.bjaxd716v" target="_blank">
@@ -313,6 +330,13 @@
                             with 'non-technical' people. This was a great learning experience both in applying my programming
                             ability and working with people from different background. History baby.</p>
                         <p><b>TECH USED:</b> ES6 + babel + gulp + nodejs</p>
+
+                        <div class="btn-container">
+                            <a href="https://github.com/austincawley/dirtybomb" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                                <i class="fa fa-hand-peace-o animated"></i>
+                                <span>Check it out!</span>
+                            </a>
+                        </div>
                     </article>
                 </div>
 
@@ -327,6 +351,13 @@
                         </p>
                         <p><b>ME:</b> Co-creator + Co-organizer</p>
                         <p><b>WHY CARE?</b> Teaching is the best way to learn, education is the best way to freedom.</p>
+
+                        <div class="btn-container">
+                            <a href="http://venturehacks.xyz" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                                <i class="fa fa-hand-peace-o animated"></i>
+                                <span>Check it out!</span>
+                            </a>
+                        </div>
                     </article>
                     <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
                              style="background-image: url(assets/venturehacks2016.gif)">
