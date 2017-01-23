@@ -6,7 +6,9 @@
 
 node_modules/
 public/bower_components/
+public/sass/bourbon
 *.min.*
 *.build.*
 /public/css/
 dist
+*.log

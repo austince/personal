@@ -1,6 +1,6 @@
 // The grayscale theme from https://github.com/BlackrockDigital/startbootstrap-grayscale
-@import 'variables';
-@import 'mixins';
+@import "variables";
+@import "mixins";
 
 body {
   background-color: $black;
@@ -129,22 +129,19 @@ a {
     &.top-nav-collapse {
       padding: 0;
       background: $black;
-      border-bottom: 1px solid rgba($white, 0.3);
+      border-bottom: 1px solid rgba($accent, 0.3);
     }
   }
 }
 
 .intro {
+  @include bg-size(cover);
   display: table;
   width: 100%;
   height: auto;
   padding: 100px 0;
   text-align: center;
   color: $white;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 
   .intro-body {
     display: table-cell;
@@ -258,14 +255,11 @@ a {
 }
 
 .projects-section {
+  @include bg-size(cover);
   width: 100%;
   padding: 50px 0;
   color: $white;
   background-color: $black;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
 }
 
 @media(min-width: $xs-cutoff) {
@@ -279,11 +273,9 @@ a {
 }
 
 .btn {
+  @include transition(all, .3s, ease-in-out);
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
-  -webkit-transition: all .3s ease-in-out;
-  -moz-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
   border-radius: 0;
 }
 
@@ -318,14 +310,6 @@ ul.banner-social-buttons {
         margin-bottom: 0;
       }
     }
-  }
-}
-
-footer {
-  padding: 50px 0;
-
-  p {
-    margin: 0;
   }
 }
 

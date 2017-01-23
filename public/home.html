@@ -9,11 +9,16 @@
 
     <title>it's my home</title>
 
+    <!-- build:cssVendor css/vendor.css -->
     <!-- Bootstrap Core CSS -->
     <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link href="css/main.min.css" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
+
+
+    <!-- build:css css/main.min.css -->
+    <link href="css/main.min.css" rel="stylesheet">
+    <!-- endbuild -->
 
     <!-- Polymer Elements -->
     <!-- Will vulcanize this in the future -->
@@ -21,8 +26,8 @@
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
     <script>
@@ -37,7 +42,7 @@
     </script>
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".content-section">
 
 <!-- Intro Header -->
 <header class="intro panel-video">
@@ -58,7 +63,9 @@
 </header>
 
 <!-- About Section -->
-<section id="about" class="content-section text-center">
+<section id="about" class="about content-section text-center">
+    <h2 class="section-title col-xs-12"><span class="highlight">me</span></h2>
+
     <div class="container-fluid about-content">
         <header class="row about-subtitle">
             <h3>lights</h3>
@@ -86,6 +93,7 @@
     </div>
 </footer>
 
+<!-- build:jsVendor js/vendor.js -->
 <!-- jQuery -->
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
@@ -94,13 +102,15 @@
 
 <!-- Polymer -->
 <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+<!-- endbuild -->
 
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
+<!-- build:js js/main.min.js -->
 <!-- Theme JavaScript -->
 <script src="js/grayscale.min.js"></script>
-<script src="js/main.min.js"></script>
+<!-- endbuild -->
 </body>
 
 </html>

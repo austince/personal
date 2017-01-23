@@ -142,7 +142,7 @@ gulp.task('build-polymer', function() {
 });
 
 gulp.task('build-bundle', function() {
-  return gulp.src('public/*.build.html')
+  return gulp.src('public/*.html')
     .pipe(usemin({
       css: [ rev ],
       html: [ function() { return minifyHtml({ empty: true }) }],
@@ -156,10 +156,11 @@ gulp.task('build-copyStatic', function() {
     .pipe(gulp.dest('dist'));
 
   return gulp.src([
-    'public/assets/*',
-    'public/favicon.ico'
+      'public/assets/*',
+      'public/polymer/*',
+      'public/favicon.ico'
   ], { base: 'public' })
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('build', sequence('clean', 'default', 'build-polymer', 'build-copyStatic', 'build-bundle', 'clean-build'));
+gulp.task('build', sequence('clean', 'default', 'build-copyStatic', 'build-bundle', 'clean-build'));

@@ -1,1 +1,14 @@
 //  Mixins
+
+@mixin bg-size($style: cover) {
+  -webkit-background-size: $style;
+  -moz-background-size: $style;
+  background-size: $style;
+  -o-background-size: $style;
+}
+
+@mixin transition($property: all, $time: .3s, $effect: ease-in-out) {
+  -webkit-transition: $property $time $effect;
+  -moz-transition: $property $time $effect;
+  transition: $property $time $effect;
+}

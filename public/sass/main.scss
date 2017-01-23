@@ -33,45 +33,9 @@ body {
     }
 
     p {
+      margin: 0;
       color: $white;
       font-size: $nav-font-size * .9;
-    }
-  }
-}
-
-.section-title {
-  padding-top: 20px;
-  position: absolute;
-  z-index: 1;
-}
-
-.highlight {
-  background-color: transparentize($primary, .5);
-  margin-bottom: 8px;
-  padding: 4px 32px 4px 8px;
-}
-
-.black {
-  background-color: $black;
-}
-
-.white {
-  background-color: $white;
-  color: $black;
-}
-
-.violet {
-  background-color: $prussian-blue;
-}
-
-.pink {
-  background-color: $carmine-pink;
-
-  a {
-    color: lighten($black, 10);
-
-    &:hover {
-      color: $black;
     }
   }
 }
@@ -80,25 +44,36 @@ body {
   display: table;
   overflow: hidden;
   position: relative;
+  top: 0;
 
   video {
-    height: auto;
+    top: 0;
     overflow: hidden;
     position: absolute;
-    width: 100%;
+    min-width: 100%;
+    min-height: 100%;
 
     &:hover {
       cursor: pointer;
-    }
-
-    &.loading {
-      min-height: 100%;
     }
   }
 }
 
 .intro {
+  @include bg-size(cover);
+  display: table;
+  width: 100%;
+  height: auto;
+  min-height: 80%;
+  padding: 100px 0;
+  text-align: center;
+  color: $white;
   background-color: $black;
+
+  .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+  }
 
   .btn {
     z-index: 1;
@@ -163,6 +138,7 @@ body {
       color: $black;
 
       &:hover {
+        opacity: .7;
         color: $secondary;
       }
     }
@@ -250,6 +226,17 @@ body {
 
     &:hover {
       opacity: 0.75;
+      cursor: pointer;
+    }
+
+    @media (max-width: $xs-cutoff) {
+      order: 2;
+      min-height: 420px;
+
+      &:hover {
+        opacity: 1;
+        cursor: auto;
+      }
     }
   }
 
@@ -268,14 +255,47 @@ body {
         order: 1;
       }
 
-      .project {
-        order: 2;
-        min-height: 420px;
-      }
-
       .project-link {
         display: none;
       }
+    }
+  }
+}
+
+// Extras
+.section-title {
+  padding-top: 20px;
+  position: absolute;
+  z-index: 1;
+}
+
+.highlight {
+  background-color: transparentize($primary, .5);
+  margin-bottom: 8px;
+  padding: 4px 32px 4px 8px;
+}
+
+.black {
+  background-color: $black;
+}
+
+.white {
+  background-color: $white;
+  color: $black;
+}
+
+.violet {
+  background-color: $prussian-blue;
+}
+
+.pink {
+  background-color: $carmine-pink;
+
+  a {
+    color: lighten($black, 10);
+
+    &:hover {
+      color: $black;
     }
   }
 }

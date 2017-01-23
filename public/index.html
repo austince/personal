@@ -24,7 +24,8 @@
         <link rel="import" href="polymer/light-switch.html">
 
         <!-- isMobile -->
-        <!-- build:jsIsMobile js/isMobile.min.js -->
+        <!-- In it's own bundle because it needs to be in the head-->
+        <!-- build:jsIsMobile js/inHead.min.js -->
         <script src="bower_components/isMobile/isMobile.min.js"></script>
         <!-- endbuild -->
 
@@ -85,7 +86,7 @@
         <header class="intro panel-video">
             <!-- Background video from Venture Hacks -->
             <video class="loading" autoplay preload loop muted poster="assets/venturehacks2016poster.png">
-                <!--<source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>-->
+                <source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>
             </video>
 
             <div class="intro-body">
@@ -230,7 +231,7 @@
                     <div class="col-sm-12">
                         <ul class="list-inline banner-social-buttons">
                             <li>
-                                <a href="https://github.com/austincawley" target="_blank" class="btn btn-default btn-lg">
+                                <a href="https://github.com/austince" target="_blank" class="btn btn-default btn-lg">
                                     <i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
                             </li>
                             <li>
@@ -256,7 +257,7 @@
                 <div class="row project-row first-project">
                     <article class="rectangle project col-sm-7  col-xs-12"
                              style="background-image: url(assets/vets.gif)">
-                        <a class="project-link" href="http://vets.cawleyedwards.com/resources" target="_blank">
+                        <a class="project-link" href="https://github.com/Vets4Warriors/frontend" target="_blank">
                         </a>
                     </article>
                     <article class="rectangle description col-sm-5 col-xs-12 violet">
@@ -286,7 +287,7 @@
                         <h3>News Sentiment - Visualizing Society</h3>
                         <p><b>WHAT:</b> My final project for HST 325, visualizing society, during sophmore year. I aimed to show
                             how sentiment is linked through our news, but moreso the difference in popularity between various
-                            articles based on their level of 'positivity'. I <a href="https://github.com/austincawley/news-sentiment" target="_blank">
+                            articles based on their level of 'positivity'. I <a href="https://github.com/austince/news-sentiment" target="_blank">
                                 used python to scrape google news</a>
                             and a third party api to analyze the article's sentiment.<br>
                             See my other projects for the class <a href="http://personal.stevens.edu/~acawleye">here.</a>
@@ -313,7 +314,7 @@
                 <div class="row project-row">
                     <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
                              style="background-image: url(assets/dirtybombVis.gif)">
-                        <a class="project-link" href="https://github.com/austincawley/dirtybomb" target="_blank">
+                        <a class="project-link" href="https://github.com/austince/dirtybomb" target="_blank">
                         </a>
                     </article>
                     <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">
@@ -332,7 +333,7 @@
                         <p><b>TECH USED:</b> ES6 + babel + gulp + nodejs</p>
 
                         <div class="btn-container">
-                            <a href="https://github.com/austincawley/dirtybomb" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                            <a href="https://github.com/austince/dirtybomb" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
                                 <i class="fa fa-hand-peace-o animated"></i>
                                 <span>Check it out!</span>
                             </a>
@@ -353,7 +354,7 @@
                         <p><b>WHY CARE?</b> Teaching is the best way to learn, education is the best way to freedom.</p>
 
                         <div class="btn-container">
-                            <a href="http://venturehacks.xyz" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                            <a href="https://venturehacks.xyz" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
                                 <i class="fa fa-hand-peace-o animated"></i>
                                 <span>Check it out!</span>
                             </a>
@@ -361,10 +362,9 @@
                     </article>
                     <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
                              style="background-image: url(assets/venturehacks2016.gif)">
-                        <a href="http://venturehacks.xyz" target="_blank" class="project-link"></a>
+                        <a href="https://venturehacks.xyz" target="_blank" class="project-link"></a>
                     </article>
                 </div>
-
             </div>
         </section>
 
@@ -381,6 +381,7 @@
         <!-- build:jsVendor js/vendor.js -->
         <!-- jQuery -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->
         <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -388,9 +389,6 @@
         <!-- Polymer -->
         <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
         <!-- endbuild -->
-
-        <!-- Plugin JavaScript -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
         <!-- build:js js/main.min.js -->
         <!-- Theme JavaScript -->

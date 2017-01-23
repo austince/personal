@@ -28,17 +28,26 @@ Custom variables:
                 background-color: var(--light-switch-on-color, --paper-yellow-200);
             }
 
-            :host .error {
-                color: var(--light-switch-error-color, red);
+            :host .switch-label {
+                margin-bottom: 12px;
+                cursor: default;
             }
 
-            paper-icon-button {
+            :host .error {
+                font-size: 16px;
+                margin-bottom: 8px;
+                color: var(--light-switch-error-color, #e94f37);
+                cursor: default;
+            }
+
+            :host paper-icon-button {
                 fill: var(--light-switch-outline-color, black);
                 height: 64px;
                 width: 64px;
                 --paper-icon-button-ink-color: var(--light-switch-ink-color, --paper-yellow-900);
                 border-radius: 50%;
                 padding: 2px;
+                margin: 0 auto;
             }
         </style>
 
@@ -46,14 +55,13 @@ Custom variables:
         <!--<p>The lights are on in [[room]]'s room? [[isOn]]</p>-->
 
         <paper-icon-button icon="lightbulb-outline"
-                           title="[[_label]] light switch"
+                           title="{{ariaLabel}}"
                            disabled="{{!hasInitialized}}"
                            on-tap="toggle">
-
         </paper-icon-button>
 
         <template is="dom-if" if="{{_showLabel}}">
-            <p>[[_label]]</p>
+            <p class="switch-label">[[_label]]</p>
         </template>
 
         <template is="dom-repeat" items="{{errors}}">
@@ -100,11 +108,15 @@ Custom variables:
                     value: false
                 },
                 _showLabel: {
-                    computed: 'computeShowLabel(label,showLabel)'
+                    computed: 'computeShowLabel(label, showLabel)'
                 },
                 label: {
                     type: String,
                     value: null
+                },
+                ariaLabel: {
+                    type: String,
+                    value: "Still setting up!"
                 },
                 _label: {
                     computed: 'computeLabel(label, room)'
@@ -121,6 +133,7 @@ Custom variables:
             },
             ready: function() {
                 var lightSwitch = this;
+                this.ga = window.ga || function() {};
                 this.$.initRequest.send({
                     method: 'GET',
                     handleAs: 'json',
@@ -129,19 +142,20 @@ Custom variables:
                     var data = resp.parseResponse();
                     lightSwitch.isOn = ('true' === data[lightSwitch.room]);
                     lightSwitch.hasInitialized = true;
+                    lightSwitch.ariaLabel = lightSwitch._label;
                     console.info(lightSwitch.room + '\'s lights are all set up!');
                 }).catch(function(error) {
                     console.error(error);
-                    this.errors.push("Light switches are unavailable. We can't have nice things.");
-                    this.ga('send', {
+                    lightSwitch.push('errors', "Light switches are momentarily unavailable.");
+                    lightSwitch.push('errors', " We can't have nice things.");
+                    lightSwitch.ariaLabel = 'Light switch is currently unavailable.';
+                    lightSwitch.ga('send', {
                         hitType: 'event',
                         eventCategory: 'Room',
                         eventAction: 'initError',
                         eventLabel: this.room + "'s room"
                     });
                 });
-
-                this.ga = window.ga || function() {};
             },
             toggle: function() {
                 if (!this.hasInitialized) {
@@ -169,7 +183,7 @@ Custom variables:
             },
             handleError: function(error) {
                 console.error(error);
-                this.errors.push("The switch. We can't have nice things.");
+                this.push('errors', "The switch is broken. For now. We can't have nice things.");
 
                 this.ga('send', {
                     hitType: 'event',
