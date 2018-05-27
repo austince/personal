@@ -175,11 +175,46 @@ body {
   }
 }
 
+// Projects sections
 .projects {
+  @media (max-width: $xs-cutoff) {
+    background-color: $prussian-blue;
+
+    .project-row {
+      display: flex;
+      flex-flow: column;
+
+      &:first-child {
+        padding-top: 60px;
+      }
+
+      .description {
+        order: 1;
+      }
+
+      .project-link {
+        display: none;
+      }
+    }
+  }
+
   background-color: $primary;
   overflow-x: hidden;
   padding-top: 0;
   padding-bottom: 0;
+
+  .video-iframe-container {
+    // embeds
+    iframe {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      padding: 0;
+      border: 0;
+      height: 100%;
+    }
+  }
 
   .project-row {
     min-height: 420px;
@@ -216,6 +251,16 @@ body {
   }
 
   .project {
+    @media (max-width: $xs-cutoff) {
+      order: 2;
+      min-height: 420px;
+
+      &:hover {
+        opacity: 1;
+        cursor: auto;
+      }
+    }
+
     background-size: cover;
 
     a {
@@ -227,37 +272,6 @@ body {
     &:hover {
       opacity: 0.75;
       cursor: pointer;
-    }
-
-    @media (max-width: $xs-cutoff) {
-      order: 2;
-      min-height: 420px;
-
-      &:hover {
-        opacity: 1;
-        cursor: auto;
-      }
-    }
-  }
-
-  @media (max-width: $xs-cutoff) {
-    background-color: $prussian-blue;
-
-    .first-project {
-      padding-top: 60px;
-    }
-
-    .project-row {
-      display: flex;
-      flex-flow: column;
-
-      .description {
-        order: 1;
-      }
-
-      .project-link {
-        display: none;
-      }
     }
   }
 }
@@ -284,7 +298,7 @@ body {
   color: $black;
 }
 
-.violet {
+.prussian {
   background-color: $prussian-blue;
 }
 

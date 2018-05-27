@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="legacy website">
     <meta name="author" content="austin cawley-edwards">
 
     <title>it's me, austin</title>
@@ -87,7 +87,7 @@
 <header class="intro panel-video">
     <!-- Background video from Venture Hacks -->
     <video class="loading" autoplay preload loop muted poster="assets/venturehacks2016poster.png">
-        <source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>
+        <source src="https://s3.amazonaws.com/personal-site-austin/projection.mp4" type="video/mp4"/>
     </video>
 
     <div class="intro-body">
@@ -150,12 +150,7 @@
         <header class="row about-subtitle">
             <h3>education</h3>
         </header>
-        <div class="row"><li>
-                        <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection"
-                           class="btn btn-default btn-lg">
-                            <i class="fa fa-envelope fa-fw"></i> <span
-                                class="network-name">austin.cawley@gmail.com</span></a>
-                    </li>
+        <div class="row">
             <div class="col-lg-3 col-sm-1"></div>
 
             <article class="col-lg-2 col-sm-3 col-xs-12">
@@ -231,14 +226,73 @@
         <div class="row">
             <h2 class="section-title text-center col-xs-12"><span class="highlight">projects</span></h2>
         </div>
+    </div>
 
-        <div class="row project-row first-project">
-            <article class="rectangle project col-sm-7  col-xs-12"
-                     style="background-image: url(assets/vets.gif)">
-                <a class="project-link" href="https://github.com/Vets4Warriors/frontend" target="_blank">
-                </a>
+    <div class="projects-container container-fluid">
+        <div class="row project-row">
+            <article class="rectangle description col-sm-5 col-xs-12 prussian">
+                <h3>Browser History</h3>
+                <p><b>WHAT:</b> a chrome extension that keeps your history with you.
+                    </a>
+                </p>
+                <p><b>ME:</b> Artist + Engineer </p>
+                <p><b>WHY CARE?</b> browsers give us many ways to 'clear' our history, but history is never as easy as a
+                    button to erase.</p>
+                <p><b>TECH USED:</b> p5.js + chrome </p>
+
+                <!-- Only show for mobile devices -->
+                <div class="btn-container">
+                    <a href="https://github.com/austince/history"
+                       class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                        <span>Check it out!</span>
+                    </a>
+                </div>
             </article>
-            <article class="rectangle description col-sm-5 col-xs-12 violet">
+            <article class="rectangle project col-lg-7 col-sm-7 col-xs-12 black">
+                <a class="project-link" href="https://github.com/austince/history" target="_blank"></a>
+                <div class="video-iframe-container">
+                    <iframe src="https://player.vimeo.com/video/253825121?muted=1&autoplay=1&loop=1&autopause=0&background=1"
+                            frameborder="0"></iframe>
+                </div>
+            </article>
+        </div>
+
+        <div class="row project-row">
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 pink">
+                <h3>Projection</h3>
+                <p><b>WHAT:</b> an interactive projected piece using one projector, one camera, and one person.
+                    Made for my final project in Creative Programming with <a
+                            href="https://github.com/jeffThompson/CreativeProgramming1/" target="_blank">
+                        Jeff Thompson.
+                    </a>
+                </p>
+                <p><b>ME:</b> Artist + Engineer </p>
+                <p><b>WHY CARE?</b> creativity drives technology. I used this project to apply
+                    computer science in non-traditional ways and express ideas through my most comfortable medium.</p>
+                <p><b>TECH USED:</b> p5.js + opencv + socket.io </p>
+
+                <!-- Only show for mobile devices -->
+                <div class="btn-container">
+                    <a href="https://github.com/austince/projection"
+                       class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                        <span>Check it out!</span>
+                    </a>
+                </div>
+            </article>
+            <article class="rectangle project col-lg-7 col-sm-7 col-xs-12 black">
+                <a class="project-link" href="https://github.com/austince/projection" target="_blank">
+                </a>
+                <div class="video-iframe-container">
+                    <iframe src="https://player.vimeo.com/video/248395998?muted=1&autoplay=1&loop=1&autopause=0&background=1"
+                            frameborder="0"></iframe>
+                </div>
+            </article>
+        </div>
+
+        <div class="row project-row">
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 white">
                 <h3>Vets 4 Warriors Online Resource</h3>
                 <p><b>WHAT:</b> Worked closely with <a href="http://vets4warriors.com" target="_blank">Vets 4
                     Warriors</a>
@@ -248,22 +302,27 @@
                 </p>
                 <p><b>ME:</b> Developer + Lead </p>
                 <p><b>WHY CARE?</b> this was an opportunity to truly help, and though not directly connected
-                    to the cause,  I found connection with the people.</p>
+                    to the cause, I found connection with the people.</p>
                 <p><b>TECH USED:</b> angular 1 + nodejs + flask + mongo</p>
 
                 <!-- Only show for mobile devices -->
                 <div class="btn-container">
-                    <a href="http://vets.cawleyedwards.com/resources"
+                    <a href="https://github.com/Vets4Warriors/frontend"
                        class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
                         <i class="fa fa-hand-peace-o animated"></i>
                         <span>Check it out!</span>
                     </a>
                 </div>
             </article>
+            <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
+                     style="background-image: url(assets/vets.gif)">
+                <a class="project-link" href="https://github.com/Vets4Warriors/frontend" target="_blank">
+                </a>
+            </article>
         </div>
 
         <div class="row project-row">
-            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 pink">
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 prussian">
                 <h3>News Sentiment - Visualizing Society</h3>
                 <p><b>WHAT:</b> My final project for HST 325, visualizing society, during sophmore year. I aimed to show
                     how sentiment is linked through our news, but moreso the difference in popularity between various
@@ -293,49 +352,50 @@
             </article>
         </div>
 
-        <div class="row project-row">
-            <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
-                     style="background-image: url(assets/dirtybombVis.gif)">
-                <a class="project-link" href="https://github.com/austince/dirtybomb" target="_blank">
-                </a>
-            </article>
-            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">
-                <h3>Dirty Bomb</h3>
-                <p><b>WHAT:</b> A javascript library for simulating the effects of a 'dirty bomb' explosion.
-                    In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex
-                        Wellerstein</a>,
-                    researched over the summer 2016.<br>
-                    I did a little <a
-                            href="https://medium.com/@austin.cawley/dirty-bomb-simulation-done-dirty-ef1450349950#.bjaxd716v"
-                            target="_blank">
-                        write-up
-                    </a> too.
-                </p>
-                <p><b>ME:</b> Developer + Researcher</p>
-                <p><b>WHY CARE?</b> I love and actively pursue using computer science in 'non-technical' fields
-                    with 'non-technical' people. This was a great learning experience both in applying my programming
-                    ability and working with people from different background. History baby.</p>
-                <p><b>TECH USED:</b> babel + gulp + nodejs</p>
+        <!--<div class="row project-row">-->
+        <!--<article class="rectangle project col-lg-7 col-sm-7 col-xs-12"-->
+        <!--style="background-image: url(assets/dirtybombVis.gif)">-->
+        <!--<a class="project-link" href="https://github.com/austince/dirtybomb" target="_blank">-->
+        <!--</a>-->
+        <!--</article>-->
+        <!--<article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">-->
+        <!--<h3>Dirty Bomb</h3>-->
+        <!--<p><b>WHAT:</b> A javascript library for simulating the effects of a 'dirty bomb' explosion.-->
+        <!--In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex-->
+        <!--Wellerstein</a>,-->
+        <!--researched over the summer 2016.<br>-->
+        <!--I did a little <a-->
+        <!--href="https://medium.com/@austin.cawley/dirty-bomb-simulation-done-dirty-ef1450349950#.bjaxd716v"-->
+        <!--target="_blank">-->
+        <!--write-up-->
+        <!--</a> too.-->
+        <!--</p>-->
+        <!--<p><b>ME:</b> Developer + Researcher</p>-->
+        <!--<p><b>WHY CARE?</b> I love and actively pursue using computer science in 'non-technical' fields-->
+        <!--with 'non-technical' people. This was a great learning experience both in applying my programming-->
+        <!--ability and working with people from different background. History baby.</p>-->
+        <!--<p><b>TECH USED:</b> babel + gulp + nodejs</p>-->
 
-                <div class="btn-container">
-                    <a href="https://github.com/austince/dirtybomb"
-                       class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
-                        <i class="fa fa-hand-peace-o animated"></i>
-                        <span>Check it out!</span>
-                    </a>
-                </div>
-            </article>
-        </div>
+        <!--<div class="btn-container">-->
+        <!--<a href="https://github.com/austince/dirtybomb"-->
+        <!--class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">-->
+        <!--<i class="fa fa-hand-peace-o animated"></i>-->
+        <!--<span>Check it out!</span>-->
+        <!--</a>-->
+        <!--</div>-->
+        <!--</article>-->
+        <!--</div>-->
 
         <div class="row project-row">
-            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 white">
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 pink">
                 <h3>Venture Hacks</h3>
                 <p><b>WHAT:</b> A hackathon initiative through the
                     <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams"
                        target="_blank">
                         Stevens Venture Center</a>.
                     Focused on entrepreneurship. We are finding and educating young people with the talent and
-                    courage to create their own companies. Now on the second generation of leaders and more than 6 events.
+                    courage to create their own companies. Now on the second generation of leaders and more than 6
+                    events.
                 </p>
                 <p><b>ME:</b> Co-creator + Co-organizer</p>
                 <p><b>WHY CARE?</b> Teaching is the best way to learn.</p>
