@@ -1,12 +1,10 @@
 {
   "name": "austince",
   "title": "austin ce",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "homepage": "http://austince.me",
-  "author": "austin <austin.cawley@gmail.com>",
-  "license": {
-    "url": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE"
-  },
+  "author": "austin ce<austin.cawley@gmail.com>",
+  "license": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE",
   "scripts": {
     "start": "gulp dev",
     "test": "./node_modules/.bin/wct",
@@ -40,5 +38,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/austincawley/personal.git"
+  },
+  "dependencies": {
+    "bootstrap": "3",
+    "font-awesome": "4"
   }
 }

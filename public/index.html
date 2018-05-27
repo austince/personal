@@ -1,399 +1,385 @@
 <!DOCTYPE html>
 <html lang="en-us">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="">
-        <meta name="author" content="austin cawley-edwards">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="austin cawley-edwards">
 
-        <title>it's me, austin</title>
+    <title>it's me, austin</title>
 
-        <!-- Bootstrap Core CSS -->
-        <!-- build:cssVendor css/vendor.css -->
-        <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-        <!-- endbuild -->
+    <!-- Bootstrap Core CSS -->
+    <!-- build:cssVendor css/vendor.css -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- endbuild -->
 
-        <!-- build:css css/main.min.css -->
-        <link href="css/main.min.css" rel="stylesheet">
-        <!-- endbuild -->
+    <!-- build:css css/main.min.css -->
+    <link href="css/main.min.css" rel="stylesheet">
+    <!-- endbuild -->
 
-        <!-- Polymer Elements -->
-        <!-- Will vulcanize this in the future -->
-        <link rel="import" href="polymer/light-switch.html">
+    <!-- Polymer Elements -->
+    <!-- Will vulcanize this in the future -->
+    <link rel="import" href="polymer/light-switch.html">
 
-        <!-- isMobile -->
-        <!-- In it's own bundle because it needs to be in the head-->
-        <!-- build:jsIsMobile js/inHead.min.js -->
-        <script src="bower_components/isMobile/isMobile.min.js"></script>
-        <!-- endbuild -->
+    <!-- isMobile -->
+    <!-- In it's own bundle because it needs to be in the head-->
+    <!-- build:jsIsMobile js/inHead.min.js -->
+    <script src="bower_components/isMobile/isMobile.min.js"></script>
+    <!-- endbuild -->
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-        <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-70358349-4', 'auto');
+        ga('require', 'linkid');
+        ga('send', 'pageview');
+    </script>
+</head>
 
-            ga('create', 'UA-70358349-4', 'auto');
-            ga('require', 'linkid');
-            ga('send', 'pageview');
-        </script>
-    </head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-    <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-
-        <!-- Navigation -->
-        <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-            <div class="container">
-                <header class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                         <i class="fa fa-bars"></i>
-                    </button>
-                    <a class="navbar-brand page-scroll" href="#page-top">
-                        <span class="light">austin</span>
-                    </a>
-                </header>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#about">me</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#projects">projects</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="/assets/resume.pdf">resume</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Intro Header -->
-        <header class="intro panel-video">
-            <!-- Background video from Venture Hacks -->
-            <video class="loading" autoplay preload loop muted poster="assets/venturehacks2016poster.png">
-                <source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>
-            </video>
-
-            <div class="intro-body">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2">
-                            <h1 class="brand-heading">
-                                <span class="highlight">austin</span>
-                                <br><br>
-                                <span class="highlight">cawley - edwards</span>
-                            </h1>
-                            <p class="intro-text">
-                                <span class="highlight">people - entrepreneurship - cs</span>
-                            </p>
-                            <a id="intro-button" href="#about" class="btn btn-circle page-scroll">
-                                <i class="fa fa-hand-peace-o animated"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Navigation -->
+<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <div class="container">
+        <header class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">
+                <span class="light">austin ce</span>
+            </a>
         </header>
 
-        <!-- About Section -->
-        <section id="about" class="about content-section text-center">
-            <h2 class="section-title col-xs-12"><span class="highlight">me</span></h2>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+            <ul class="nav navbar-nav">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">me</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#projects">projects</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/assets/resume.pdf">resume</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-            <div class="container-fluid about-content">
-                <header class="row about-subtitle">
-                    <h3>entrepreneurship</h3>
-                </header>
-                <div class="row">
-                    <div class="col-lg-3 col-sm-1"></div>
-                    <article class="col-lg-2 col-sm-3 col-xs-12">
-                        <a href="http://truckpallet.com" target="_blank">
-                            <img src="/assets/palletLogo.png">
-                            <h4>Pallet Technologies inc.</h4>
-                        </a>
-                        <ul>
-                            <li>co-founded a startup on the 'uber for trucking' model.</li>
-                            <li>headed the technology development.</li>
-                            <li>ended abruptly, ask me what i learned!</li>
-                        </ul>
-                    </article>
-                    <div class="col-lg-2 col-sm-4 col-xs-12">
+<!-- Intro Header -->
+<header class="intro panel-video">
+    <!-- Background video from Venture Hacks -->
+    <video class="loading" autoplay preload loop muted poster="assets/venturehacks2016poster.png">
+        <source src="https://s3.amazonaws.com/personal-site-austin/venturehacks2016.mp4" type="video/mp4"/>
+    </video>
 
-                    </div>
-                    <article class="col-lg-2 col-sm-3 col-xs-12">
-                        <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams" target="_blank">
-                            <img src="/assets/stevensVentureCenterLogo.png">
-                            <h4>Stevens Venture Center</h4>
-                        </a>
-                        <ul>
-                            <li>currently helping Stevens to redefine entrepreneurial education.</li>
-                            <li>organizing hackathons, creative space, and support for passionate people.</li>
-                        </ul>
-                    </article>
-                    <div class="col-lg-3 col-sm-1"></div>
-                </div>
-
-                <header class="row about-subtitle">
-                    <h3>education</h3>
-                </header>
-                <div class="row">
-                    <div class="col-lg-3 col-sm-1"></div>
-                    <article class="col-lg-2 col-sm-3 col-xs-12">
-                        <a href="http://www.wuhsms.org/" target="_blank">
-                            <img src="/assets/woodstockLogo.png">
-                            <h4>Woodstock Union High School</h4>
-                        </a>
-                        <ul>
-                            <li>Summa Cum Laude.</li>
-                            <li>Graduated with a class of 89.</li>
-                            <li>Rural upbringing for the win.</li>
-                        </ul>
-                    </article>
-                    <div class="col-lg-2 col-sm-4 col-xs-12">
-
-                    </div>
-                    <article class="col-lg-2 col-sm-3 col-xs-12">
-                        <a href="https://stevens.edu" target="_blank">
-                            <img src="/assets/stevensColorLogo.png">
-                            <h4>Stevens Institute of Technology</h4>
-                        </a>
-                        <ul>
-                            <li>Computer Science.</li>
-                            <li>My current location.</li>
-                            <li>Have found many great mentors and a helping community.</li>
-                            <li>Class of 2018.</li>
-                        </ul>
-                    </article>
-                    <div class="col-lg-3 col-sm-1"></div>
-                </div>
-
-                <header class="row about-subtitle">
-                    <h3>travel</h3>
-                </header>
-                <div class="row">
-                    <div class="col-lg-3 col-sm-1"></div>
-                    <article class="col-lg-2 col-sm-3 col-xs-12">
-                        <img src="/assets/eco-field.svg">
-                        <h4>Gap Year</h4>
-                        <ul>
-                            <li>Spent half a year working on farms, in kitchens, and with families around Europe.</li>
-                            <li>The other half was spent working on a local vineyard in Barnard, VT.</li>
-                        </ul>
-                    </article>
-                    <div class="col-lg-2 col-sm-4 col-xs-12">
-
-                    </div>
-                    <article class="col-lg-2 col-sm-3 col-xs-12">
-                        <a href="https://goo.gl/khKZ4W" target="_blank">
-                            <img src="/assets/midPyreneesLogoText.png">
-                            <h4>Lycée de Bagatelle</h4>
-                        </a>
-                        <ul>
-                            <li>Semester abroad during my junior year of highschool.</li>
-                            <li>Lived with a family in Saint Gaudens, France.</li>
-                            <li>Honors Science Track.</li>
-                        </ul>
-                    </article>
-                    <div class="col-lg-3 col-sm-1"></div>
-                </div>
-
-
-                <header class="row about-subtitle">
-                    <h3>home</h3>
-                </header>
-                <div class="row">
-                    <div class="col-lg-3 col-sm-1"></div>
-                    <div class="col-lg-2 col-sm-4 col-xs-12">
-                        <light-switch room="austin" label="My room"></light-switch>
-                    </div>
-                    <div class="col-lg-2 col-sm-2"></div>
-                    <div class="col-lg-2 col-sm-4 col-xs-12">
-                        <light-switch room="julian" label="My roommate's room"></light-switch>
-                    </div>
-                    <div class="col-lg-3 col-sm-1"></div>
-                </div>
-
-                <div class="row social-links">
-                    <div class="col-sm-12">
-                        <ul class="list-inline banner-social-buttons">
-                            <li>
-                                <a href="https://github.com/austince" target="_blank" class="btn btn-default btn-lg">
-                                    <i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
-                            </li>
-                            <li>
-                                <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection" class="btn btn-default btn-lg">
-                                    <i class="fa fa-envelope fa-fw"></i> <span class="network-name">austin.cawley@gmail.com</span></a>
-                            </li>
-                            <li>
-                                <a href="https://linkedin.com/in/austincawley " target="_blank" class="btn btn-default btn-lg">
-                                    <i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
-                            </li>
-                        </ul>
-                    </div>
+    <div class="intro-body">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">
+                        <span class="highlight">austin cawley-edwards</span>
+                    </h1>
+                    <p class="intro-text">
+                        <span class="highlight">entrepreneurship - cs - art</span>
+                    </p>
+                    <a id="intro-button" href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</header>
 
-        <section id="projects" class="projects content-section">
-            <div class="container-fluid">
-                <div class="row">
-                    <h2 class="section-title text-center col-xs-12"><span class="highlight">projects</span></h2>
-                </div>
+<!-- About Section -->
+<section id="about" class="about content-section text-center">
+    <h2 class="section-title col-xs-12"><span class="highlight">me</span></h2>
 
-                <div class="row project-row first-project">
-                    <article class="rectangle project col-sm-7  col-xs-12"
-                             style="background-image: url(assets/vets.gif)">
-                        <a class="project-link" href="https://github.com/Vets4Warriors/frontend" target="_blank">
-                        </a>
-                    </article>
-                    <article class="rectangle description col-sm-5 col-xs-12 violet">
-                        <h3>Vets 4 Warriors Online Resource</h3>
-                        <p><b>WHAT:</b> Worked closely with <a href="http://vets4warriors.com" target="_blank">Vets 4 Warriors</a>
-                            , a suicide prevention hotline, in their New Jersey branch. Met with their counselors regularly.
-                            designed <a class="project-link" href="http://vets.cawleyedwards.com/resources" target="_blank">
-                                a system </a> to help them pool their collective resources.
-                        </p>
-                        <p><b>ME:</b> Developer + Lead </p>
-                        <p><b>WHY CARE?</b> this was an opportunity to truly help. No matter how one feels about social stances,
-                            the military, etc. I think it's important to help people be happy.</p>
-                        <p><b>TECH USED:</b> angular 1 + nodejs + flask + mongo</p>
-
-                        <!-- Only show for mobile devices -->
-                        <div class="btn-container">
-                            <a href="http://vets.cawleyedwards.com/resources" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
-                                <i class="fa fa-hand-peace-o animated"></i>
-                                <span>Check it out!</span>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="row project-row">
-                    <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 pink">
-                        <h3>News Sentiment - Visualizing Society</h3>
-                        <p><b>WHAT:</b> My final project for HST 325, visualizing society, during sophmore year. I aimed to show
-                            how sentiment is linked through our news, but moreso the difference in popularity between various
-                            articles based on their level of 'positivity'. I <a href="https://github.com/austince/news-sentiment" target="_blank">
-                                used python to scrape google news</a>
-                            and a third party api to analyze the article's sentiment.<br>
-                            See my other projects for the class <a href="http://personal.stevens.edu/~acawleye">here.</a>
-                        </p>
-                        <p><b>ME:</b> lowly student </p>
-                        <p><b>WHY CARE?</b> I'm interested in how technology influences us, but even more with
-                            how people are influenced by people. This project let me explore both.</p>
-                        <p><b>TECH USED:</b> d3.js + beautifulSoup4 + flask + mongo</p>
-
-                        <div class="btn-container">
-                            <a href="http://personal.stevens.edu/~acawleye/final/" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
-                                <i class="fa fa-hand-peace-o animated"></i>
-                                <span>Check it out!</span>
-                            </a>
-                        </div>
-                    </article>
-                    <article class="rectangle project col-lg-7 col-sm-7  col-xs-12"
-                             style="background-image: url(assets/newsWeb.gif)">
-                        <a class="project-link" href="http://personal.stevens.edu/~acawleye/final/" target="_blank">
-                        </a>
-                    </article>
-                </div>
-
-                <div class="row project-row">
-                    <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
-                             style="background-image: url(assets/dirtybombVis.gif)">
-                        <a class="project-link" href="https://github.com/austince/dirtybomb" target="_blank">
-                        </a>
-                    </article>
-                    <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">
-                        <h3>Dirty Bomb</h3>
-                        <p><b>WHAT:</b> A javascript library for simulating the effects of a 'dirty bomb' explosion.
-                            In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex Wellerstein</a>,
-                            researched over the summer 2016.<br>
-                            I did a little <a href="https://medium.com/@austin.cawley/dirty-bomb-simulation-done-dirty-ef1450349950#.bjaxd716v" target="_blank">
-                                write-up
-                            </a> too.
-                        </p>
-                        <p><b>ME:</b> Developer + Researcher</p>
-                        <p><b>WHY CARE?</b> I love and actively pursue using computer science in 'non-technical' fields
-                            with 'non-technical' people. This was a great learning experience both in applying my programming
-                            ability and working with people from different background. History baby.</p>
-                        <p><b>TECH USED:</b> ES6 + babel + gulp + nodejs</p>
-
-                        <div class="btn-container">
-                            <a href="https://github.com/austince/dirtybomb" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
-                                <i class="fa fa-hand-peace-o animated"></i>
-                                <span>Check it out!</span>
-                            </a>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="row project-row">
-                    <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 white">
-                        <h3>Venture Hacks</h3>
-                        <p><b>WHAT:</b> A hackathon initiative through the
-                            <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams" target="_blank">
-                                Stevens Venture Center</a>.
-                            It's focused on entrepreneurship. We are finding and educating young people with the talent and
-                            courage to create their own companies.
-                        </p>
-                        <p><b>ME:</b> Co-creator + Co-organizer</p>
-                        <p><b>WHY CARE?</b> Teaching is the best way to learn, education is the best way to freedom.</p>
-
-                        <div class="btn-container">
-                            <a href="https://venturehacks.xyz" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
-                                <i class="fa fa-hand-peace-o animated"></i>
-                                <span>Check it out!</span>
-                            </a>
-                        </div>
-                    </article>
-                    <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
-                             style="background-image: url(assets/venturehacks2016.gif)">
-                        <a href="https://venturehacks.xyz" target="_blank" class="project-link"></a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-
-        <footer>
-            <!-- Something funny -->
-            <div class="container text-center">
-                <a href="https://www.youtube.com/watch?v=OSICJJq86ic" target="_blank">
-                    <p>persons attempting to find a plot in [this narrative] will be shot</p>
+    <div class="container-fluid about-content">
+        <header class="row about-subtitle">
+            <h3>entrepreneurship</h3>
+        </header>
+        <div class="row">
+            <div class="col-lg-3 col-sm-1"></div>
+            <article class="col-lg-2 col-sm-3 col-xs-12">
+                <a href="http://truckpallet.com" target="_blank">
+                    <img src="/assets/palletLogo.png">
+                    <h4>Pallet Technologies inc.</h4>
                 </a>
+                <ul>
+                    <li>co-founded a startup on the 'uber for trucking' model.</li>
+                    <li>headed the technology development.</li>
+                    <li>ask me what i learned!</li>
+                </ul>
+            </article>
+            <div class="col-lg-2 col-sm-4 col-xs-12">
+
             </div>
-        </footer>
+            <article class="col-lg-2 col-sm-3 col-xs-12">
+                <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams"
+                   target="_blank">
+                    <img src="/assets/stevensVentureCenterLogo.png">
+                    <h4>Stevens Venture Center</h4>
+                </a>
+                <ul>
+                    <li>helped Stevens to redefine entrepreneurial education.</li>
+                    <li>organized hackathons, creative space, and support for passionate people.</li>
+                </ul>
+            </article>
+            <div class="col-lg-3 col-sm-1"></div>
+        </div>
 
-        <!-- build:jsVendor js/vendor.js -->
-        <!-- jQuery -->
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+        <header class="row about-subtitle">
+            <h3>education</h3>
+        </header>
+        <div class="row"><li>
+                        <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection"
+                           class="btn btn-default btn-lg">
+                            <i class="fa fa-envelope fa-fw"></i> <span
+                                class="network-name">austin.cawley@gmail.com</span></a>
+                    </li>
+            <div class="col-lg-3 col-sm-1"></div>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+            <article class="col-lg-2 col-sm-3 col-xs-12">
+                <a href="https://stevens.edu" target="_blank">
+                    <img src="/assets/stevensColorLogo.png">
+                    <h4>Stevens Institute of Technology</h4>
+                </a>
+                <ul>
+                    <li>Bachelor of Computer Science.</li>
+                    <li>Graduated with High Honors.</li>
+                    <li>Class of 2018.</li>
+                </ul>
+            </article>
 
-        <!-- Polymer -->
-        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-        <!-- endbuild -->
+            <div class="col-lg-2 col-sm-4 col-xs-12"></div>
 
-        <!-- build:js js/main.min.js -->
-        <!-- Theme JavaScript -->
-        <script src="js/grayscale.min.js"></script>
-        <script src="js/main.min.js"></script>
-        <!-- endbuild -->
-    </body>
+            <article class="col-lg-2 col-sm-3 col-xs-12">
+                <img src="/assets/eco-field.svg">
+                <h4>Gap Year</h4>
+                <ul>
+                    <li>Spent half a year working on farms, in kitchens, and with families around Europe.</li>
+                    <li>The other half was spent working on a local vineyard in Barnard, VT.</li>
+                </ul>
+            </article>
+
+            <div class="col-lg-3 col-sm-1"></div>
+        </div>
+
+        <header class="row about-subtitle">
+            <h3>home</h3>
+        </header>
+        <div class="row">
+            <div class="col-lg-3 col-sm-1"></div>
+            <div class="col-lg-2 col-sm-4 col-xs-12">
+                <light-switch room="austin" label="My room"></light-switch>
+            </div>
+            <div class="col-lg-2 col-sm-2"></div>
+            <div class="col-lg-2 col-sm-4 col-xs-12">
+                <light-switch room="julian" label="My roommate's room"></light-switch>
+            </div>
+            <div class="col-lg-3 col-sm-1"></div>
+        </div>
+
+        <div class="row social-links">
+            <div class="col-sm-12">
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://github.com/austince" target="_blank" class="btn btn-default btn-lg">
+                            <i class="fa fa-github fa-fw"></i> <span class="network-name">github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/austince" target="_blank" class="btn btn-default btn-lg">
+                            <i class="fa fa-linkedin fa-fw"></i> <span class="network-name">linkedin</span></a>
+                    </li>
+                    <li>
+                        <a href="https://medium.com/@austin.ce" target="_blank" class="btn btn-default btn-lg">
+                            <i class="fa fa-medium fa-fw"></i> <span class="network-name">blog</span></a>
+                    </li>
+                    <li>
+                        <a href="mailto:austin.cawley@gmail.com?subject=Missed+connection"
+                           class="btn btn-default btn-lg">
+                            <i class="fa fa-envelope fa-fw"></i> <span
+                                class="network-name">austin.cawley@gmail.com</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects" class="projects content-section">
+    <div class="container-fluid">
+        <div class="row">
+            <h2 class="section-title text-center col-xs-12"><span class="highlight">projects</span></h2>
+        </div>
+
+        <div class="row project-row first-project">
+            <article class="rectangle project col-sm-7  col-xs-12"
+                     style="background-image: url(assets/vets.gif)">
+                <a class="project-link" href="https://github.com/Vets4Warriors/frontend" target="_blank">
+                </a>
+            </article>
+            <article class="rectangle description col-sm-5 col-xs-12 violet">
+                <h3>Vets 4 Warriors Online Resource</h3>
+                <p><b>WHAT:</b> Worked closely with <a href="http://vets4warriors.com" target="_blank">Vets 4
+                    Warriors</a>
+                    , a suicide prevention hotline, in their New Jersey branch. Met with their counselors regularly.
+                    designed <a class="project-link" href="http://vets.cawleyedwards.com/resources" target="_blank">
+                        a system </a> to help them pool their collective resources.
+                </p>
+                <p><b>ME:</b> Developer + Lead </p>
+                <p><b>WHY CARE?</b> this was an opportunity to truly help, and though not directly connected
+                    to the cause,  I found connection with the people.</p>
+                <p><b>TECH USED:</b> angular 1 + nodejs + flask + mongo</p>
+
+                <!-- Only show for mobile devices -->
+                <div class="btn-container">
+                    <a href="http://vets.cawleyedwards.com/resources"
+                       class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                        <span>Check it out!</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="row project-row">
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 pink">
+                <h3>News Sentiment - Visualizing Society</h3>
+                <p><b>WHAT:</b> My final project for HST 325, visualizing society, during sophmore year. I aimed to show
+                    how sentiment is linked through our news, but moreso the difference in popularity between various
+                    articles based on their level of 'positivity'. I <a
+                            href="https://github.com/austince/news-sentiment" target="_blank">
+                        used python to scrape google news</a>
+                    and a third party api to analyze the article's sentiment.<br>
+                    See my other projects for the class <a href="http://personal.stevens.edu/~acawleye">here.</a>
+                </p>
+                <p><b>ME:</b> student </p>
+                <p><b>WHY CARE?</b> I'm interested in how technology influences us, but even more with
+                    how people are influenced by people. This project let me explore both.</p>
+                <p><b>TECH USED:</b> d3.js + beautifulSoup4 + flask + mongo</p>
+
+                <div class="btn-container">
+                    <a href="http://personal.stevens.edu/~acawleye/final/"
+                       class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                        <span>Check it out!</span>
+                    </a>
+                </div>
+            </article>
+            <article class="rectangle project col-lg-7 col-sm-7  col-xs-12"
+                     style="background-image: url(assets/newsWeb.gif)">
+                <a class="project-link" href="http://personal.stevens.edu/~acawleye/final/" target="_blank">
+                </a>
+            </article>
+        </div>
+
+        <div class="row project-row">
+            <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
+                     style="background-image: url(assets/dirtybombVis.gif)">
+                <a class="project-link" href="https://github.com/austince/dirtybomb" target="_blank">
+                </a>
+            </article>
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 black">
+                <h3>Dirty Bomb</h3>
+                <p><b>WHAT:</b> A javascript library for simulating the effects of a 'dirty bomb' explosion.
+                    In collaboration with <a href="http://nuclearsecrecy.com/nukemap/" target="_blank">Dr. Alex
+                        Wellerstein</a>,
+                    researched over the summer 2016.<br>
+                    I did a little <a
+                            href="https://medium.com/@austin.cawley/dirty-bomb-simulation-done-dirty-ef1450349950#.bjaxd716v"
+                            target="_blank">
+                        write-up
+                    </a> too.
+                </p>
+                <p><b>ME:</b> Developer + Researcher</p>
+                <p><b>WHY CARE?</b> I love and actively pursue using computer science in 'non-technical' fields
+                    with 'non-technical' people. This was a great learning experience both in applying my programming
+                    ability and working with people from different background. History baby.</p>
+                <p><b>TECH USED:</b> babel + gulp + nodejs</p>
+
+                <div class="btn-container">
+                    <a href="https://github.com/austince/dirtybomb"
+                       class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                        <span>Check it out!</span>
+                    </a>
+                </div>
+            </article>
+        </div>
+
+        <div class="row project-row">
+            <article class="rectangle description col-lg-5 col-sm-5 col-xs-12 white">
+                <h3>Venture Hacks</h3>
+                <p><b>WHAT:</b> A hackathon initiative through the
+                    <a href="https://www.stevens.edu/news/new-entrepreneurial-co-op-program-seeks-help-students-realize-their-startup-dreams"
+                       target="_blank">
+                        Stevens Venture Center</a>.
+                    Focused on entrepreneurship. We are finding and educating young people with the talent and
+                    courage to create their own companies. Now on the second generation of leaders and more than 6 events.
+                </p>
+                <p><b>ME:</b> Co-creator + Co-organizer</p>
+                <p><b>WHY CARE?</b> Teaching is the best way to learn.</p>
+
+                <div class="btn-container">
+                    <a href="https://venturehacks.xyz" class="btn btn-default btn-lg hidden-sm hidden-md hidden-lg">
+                        <i class="fa fa-hand-peace-o animated"></i>
+                        <span>Check it out!</span>
+                    </a>
+                </div>
+            </article>
+            <article class="rectangle project col-lg-7 col-sm-7 col-xs-12"
+                     style="background-image: url(assets/venturehacks2016.gif)">
+                <a href="https://venturehacks.xyz" target="_blank" class="project-link"></a>
+            </article>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <!-- Something funny -->
+    <div class="container text-center" aria-label="hehe">
+        <a href="https://www.youtube.com/watch?v=OSICJJq86ic" target="_blank" aria-label="hehe">
+            <p>austin &copy; (e)</p>
+        </a>
+    </div>
+</footer>
+
+<!-- build:jsVendor js/vendor.js -->
+<!-- jQuery -->
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery.easing/js/jquery.easing.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Polymer -->
+<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+<!-- endbuild -->
+
+<!-- build:js js/main.min.js -->
+<!-- Theme JavaScript -->
+<script src="js/grayscale.min.js"></script>
+<script src="js/main.min.js"></script>
+<!-- endbuild -->
+</body>
 </html>

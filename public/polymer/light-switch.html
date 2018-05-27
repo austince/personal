@@ -1,7 +1,7 @@
 <!--
 
 
-Custom variables:
+Custom css variables:
 --light-switch-ink-color
 --light-switch-on-color
 --light-switch-outline-color
@@ -146,8 +146,8 @@ Custom variables:
                     console.info(lightSwitch.room + '\'s lights are all set up!');
                 }).catch(function(error) {
                     console.error(error);
-                    lightSwitch.push('errors', "Light switches are momentarily unavailable.");
-                    lightSwitch.push('errors', " We can't have nice things.");
+                    lightSwitch.push('errors', "Switch currently unavailable.");
+                    lightSwitch.push('errors', "We can't have nice things.");
                     lightSwitch.ariaLabel = 'Light switch is currently unavailable.';
                     lightSwitch.ga('send', {
                         hitType: 'event',
