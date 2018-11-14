@@ -12,3 +12,4 @@ public/sass/bourbon
 /public/css/
 dist
 *.log
+.firebase

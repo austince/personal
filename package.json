@@ -7,7 +7,7 @@
   "license": "https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE",
   "scripts": {
     "start": "gulp dev",
-    "test": "./node_modules/.bin/wct",
+    "test": "wct",
     "build": "gulp build",
     "predeploy": "npm run build",
     "deploy": "firebase deploy"
@@ -17,7 +17,7 @@
     "eslint": "^3.5.0",
     "eslint-config-airbnb-base": "^7.1.0",
     "eslint-plugin-import": "^1.15.0",
-    "firebase-tools": "^3.18.5",
+    "firebase-tools": "^6.1.0",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.10",
